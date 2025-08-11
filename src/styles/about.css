@@ -1,33 +1,59 @@
+:root {
+  --primary-color: #442f90;
+  --secondary-color: #4ec7ef;
+  --accent-color: #f8f9fa;
+  --text-dark: #333;
+  --text-light: #666;
+  --white: #ffffff;
+  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --impact-gradient: linear-gradient(135deg, #4F46E5, #7C3AED);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
 .about-page {
   font-family: 'Segoe UI', sans-serif;
   color: #333;
 }
 
 .about-hero {
-  height: 50vh;
+  height: 70vh;
   background-size: cover;
   background-position: center;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: flex-start;
+  border-bottom-right-radius: 100px;
+  padding-left: 10%;
 }
 
-.overlay {
-  position: relative;
-  z-index: 2;
-  text-align: center;
+
+.about-hero .overlay {
+  max-width: 600px; /* Keep text area narrow like home hero */
   color: white;
-  /* padding: 40px; */
-  padding: 0 20px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  z-index: 2;
 }
 
 .about-heading {
-  font-size: 38px;
+  font-size: 4rem;
+  font-weight: 500;
   margin-bottom: 20px;
   margin-top: 8%;
-  color: #ffffff;
+  color: var(--white);
+  
 }
 
 .about-subheading {
@@ -76,4 +102,186 @@
   font-size: 18px;
   line-height: 1.6;
   color: #444;
+}
+
+
+/* Additional styles for new sections */
+.export-services-list {
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+.export-services-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.export-services-list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.export-markets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.market-region {
+  flex: 1;
+  min-width: 150px;
+}
+
+.market-region h4 {
+  color: var(--primary-color);
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.market-region p {
+  font-size: 15px;
+  color: var(--text-light);
+}
+
+/* Certificates Section */
+.certificates-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f9f9ff 0%, #f0f4ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.certificates-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.certificates-section h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.certificates-section .subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.certificates-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  justify-items: center; 
+}
+
+
+.certificate-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.certificate-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--primary-color);
+  transition: all 0.4s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-card:hover::before {
+  height: 100%;
+  opacity: 0.1;
+}
+
+.certificate-logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  transition: all 0.4s ease;
+}
+
+.certificate-card:hover .certificate-logo {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-logo img {
+  max-width: 100%;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+.certificate-card h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.certificate-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  position: relative;
+  z-index: 2;
+}
+
+/* Animation for certificate cards */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.certificate-card:hover {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  
+  .certificate-card {
+    padding: 25px 20px;
+  }
+  
+  .certificate-logo {
+    width: 80px;
+    height: 80px;
+  }
 }
