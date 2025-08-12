@@ -1,0 +1,68 @@
+:root {
+  --primary-color: #442f90;
+  --secondary-color: #4ec7ef;
+  --accent-color: #f8f9fa;
+  --text-dark: #333;
+  --text-light: #666;
+  --white: #ffffff;
+  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --impact-gradient: linear-gradient(135deg, #4F46E5, #7C3AED);
+   --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --transition-fast: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.products-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+.products-hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom-right-radius: 100px;
+  padding-left: 10%;
+}
+
+
+
+.products-hero .overlay {
+  max-width: 600px; /* Keep text area narrow like home hero */
+  color: white;
+  z-index: 2;
+}
+
+.products-heading {
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: 8%;
+  color: var(--white);
+  
+}
+
+.products-subheading {
+  font-size: 20px;
+  max-width: 700px;
+  margin: auto;
+}

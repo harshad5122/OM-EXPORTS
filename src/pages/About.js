@@ -1,6 +1,6 @@
 import '../styles/about.css';
 import backgroundImage from '../assets/images/shiping.jpg';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 import product1 from '../assets/images/product-sourcing.jpg';
 // import product2 from '../assets/images/slide2.jpg';
 import exportImage1 from '../assets/images/maps.jpg';
@@ -85,18 +85,30 @@ const About = () => {
               </div>
               <div className="floating-card" data-aos="fade-up" data-aos-delay="400">
                 <div className="card-content">
-                  <h3>Since 2005</h3>
-                  <p>18+ years of trusted global exports</p>
+                  <h3>Driven by Excellence</h3>
+                  <p>Delivering quality products and building lasting global partnerships.</p>
                   <div className="stats-grid">
                     <div className="stat-item">
+                      <div className="stat-number">100%</div>
+                      <div className="stat-label">Commitment</div>
+                    </div>
+                    <div className="stat-item">
+                      <div className="stat-number">10+</div>
+                      <div className="stat-label">Product Categories</div>
+                    </div>
+                  </div>
+                  {/* <h3>Since 2005</h3>
+                  <p>18+ years of trusted global exports</p>
+                  <div className="stats-grid"> */}
+                  {/* <div className="stat-item">
                       <div className="stat-number">500+</div>
                       <div className="stat-label">Clients</div>
                     </div>
                     <div className="stat-item">
                       <div className="stat-number">25+</div>
                       <div className="stat-label">Countries</div>
-                    </div>
-                  </div>
+                    </div> */}
+                  {/* </div> */}
                 </div>
               </div>
             </div>
@@ -195,7 +207,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

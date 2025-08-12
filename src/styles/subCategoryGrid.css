@@ -1,0 +1,65 @@
+/* src/styles/subCategoryGrid.css */
+
+.subcategory-grid-container {
+  background-color: #f8f9fa;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.subcategory-grid {
+  display: grid;
+  
+  grid-template-columns: repeat(4, 280px);
+  gap: 2rem;
+  justify-content: center;
+  
+  max-width: 1200px;
+  width: 100%;
+}
+
+.subcategory-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transform: scale(0.9);
+  opacity: 0;
+  animation: fadeInScale 0.5s forwards ease;
+  transition: all 0.3s ease;
+}
+
+.subcategory-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-color: #93e2fc;
+}
+
+.subcategory-icon {
+  height: 150px;
+  width: 150px;
+  margin: 0 auto 1rem;
+}
+
+.subcategory-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.subcategory-card h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333333;
+}
+
+@keyframes fadeInScale {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,176 @@
+:root {
+  --primary-color: #442f90;
+  --secondary-color: #4ec7ef;
+  --accent-color: #f8f9fa;
+  --text-dark: #333;
+  --text-light: #666;
+  --white: #ffffff;
+  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --impact-gradient: linear-gradient(135deg, #4F46E5, #7C3AED);
+   --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --transition-fast: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.services-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+.services-hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom-right-radius: 100px;
+  padding-left: 10%;
+}
+
+
+
+.services-hero .overlay {
+  max-width: 600px; /* Keep text area narrow like home hero */
+  color: white;
+  z-index: 2;
+}
+
+.services-heading {
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: 8%;
+  color: var(--white);
+  
+}
+
+.services-subheading {
+  font-size: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Root Variables already defined above */
+
+.our-services {
+  padding: 4rem 10%;
+  background: var(--accent-color);
+  text-align: center;
+}
+
+.section-title {
+  /* font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 3rem; */
+    font-size: 2.5rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  opacity: 0.5;
+  transform: scale(0.95);
+  transition: all var(--transition-slow);
+}
+
+.service-card.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.service-description {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+/* Call to Action Section */
+.cta-section {
+  padding: 4rem 10%;
+  
+  color: var(--white);
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.cta-text {
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--gradient);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: all var(--transition-fast);
+}
+
+.cta-button:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}

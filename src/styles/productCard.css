@@ -1,0 +1,96 @@
+
+
+.product-card-container {
+  background-color: #f8f9fa;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.product-card-grid {
+  display: grid;
+  
+  grid-template-columns: repeat(4, 280px);
+  gap: 2rem;
+ 
+  justify-content: center; 
+  max-width: calc((260px * 4) + (2rem * 3));
+  
+}
+
+.product-card {
+  background: linear-gradient(145deg, #ffffff, #f1f1f8);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeSlideUp 0.5s forwards ease;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  border-color: #93e2fc;
+}
+
+.product-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.08);
+}
+
+.product-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.product-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: #442f90;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.enquire-button {
+  background: linear-gradient(135deg, #4ec7ef, #442f90);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Inter', sans-serif;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.enquire-button:hover {
+  background: linear-gradient(135deg, #442f90, #4ec7ef);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+@keyframes fadeSlideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

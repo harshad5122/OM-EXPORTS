@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 import '../styles/home.css';
 
 import heroImage from '../assets/images/slide1.jpg';
@@ -255,8 +255,8 @@ const addToRefs = (el) => {
           </div>
         </div>
       </section>
-
-      <Footer />
+{/* 
+      <Footer /> */}
     </div>
   );
 };
