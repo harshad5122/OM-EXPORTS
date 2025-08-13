@@ -249,7 +249,7 @@ const addToRefs = (el) => {
             <h2>Looking for a Trusted Export Partner from India?</h2>
             <p>Join hands with OM Exports – your reliable source for quality products, timely delivery, and personalized export solutions tailored for global businesses.</p>
             <div className="cta-buttons">
-              <button className="btn-primary">Get Quote</button>
+              <button className="btn-primary">Inquiry Now</button>
               <button className="btn-secondary">Contact Us</button>
             </div>
           </div>

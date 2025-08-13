@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/navbar.css';
 import logo from '../assets/logo.png';
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -51,7 +52,10 @@ const Navbar = () => {
             <a href="/contact" className="nav-link" onClick={closeMenu}>Contact</a>
           </li>
           <li className="nav-item">
-            <button className="nav-cta-btn">Get Quote</button>
+            {/* <button className="nav-cta-btn">Inquiry Now</button> */}
+            <Link to="/inquiry" className="nav-cta-btn" onClick={closeMenu}>
+    Inquiry Now
+  </Link>
           </li>
         </ul>
 
@@ -68,35 +72,3 @@ const Navbar = () => {
 export default Navbar;
 
 
-
-
-
-
-
-
-
-
-
-// import { Link } from 'react-router-dom';
-// import '../styles/navbar.css';
-// import logo from '../assets/logo.png';
-
-// function Navbar() {
-//   return (
-//     <nav className="navbar">
-//       <div className="logo">
-//         <img src={logo} alt="OM Exports Logo" />
-//       </div>
-//       <ul className="nav-links">
-//         <li><Link to="/">Home</Link></li>
-//         <li><Link to="/about">About</Link></li>
-//         <li><Link to="/products">Products</Link></li>
-//         <li><Link to="/contact">Contact</Link></li>
-//         <li><Link to="/certification">Certification</Link></li>
-//         <li><Link to="/blog">Blog</Link></li>
-//       </ul>
-//     </nav>
-//   );
-// }
-
-// export default Navbar;

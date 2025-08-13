@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lato&display=swap');
+
+/* New Color Variables */
+:root {
+  --primary-color: #442f90;
+  --secondary-color: #4ec7ef;
+  --accent-color: #f8f9fa;
+  --text-dark: #333;
+  --text-light: #666;
+  --white: #ffffff;
+  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --impact-gradient: linear-gradient(135deg, #4F46E5, #7C3AED);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.inquiry-page {
+  /* background: #F0F2F5;  */
+   background: 
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('../assets/images/inquiry-background.jpg') center/cover no-repeat; 
+  padding: 40px 0;
+  padding-top: 10%;
+  min-height: 100vh; /* Ensure it takes full height */
+  display: flex; /* For vertical centering */
+  /* align-items: flex-start; */
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+}
+
+.inquiry-container {
+  background: var(--white);
+  /* background: rgba(255, 255, 255, 0.6); */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(8px);
+  max-width: 650px;
+  width: 90%; /* Responsive width */
+  margin: auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.form-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: 600; /* Make it bolder */
+}
+
+.form-subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: var(--text-light); /* Changed from #A9A9A9 */
+  text-align: center;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative; /* For error message positioning if needed */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: var(--primary-color);
+  font-weight: 600; /* Make labels a bit bolder */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: 'Lato', sans-serif;
+  border: 1px solid #D1D8DD; 
+  border-radius: 6px;
+  background: var(--white);
+  font-size: 16px;
+  color: var(--text-dark); /* Changed from #333 */
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color); /* Changed from #006666 */
+  box-shadow: 0 0 0 3px rgba(68, 47, 144, 0.2); /* Using primary color rgba */
+  outline: none;
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+  border-color: #DC3545; /* Keeping as specific hex for error */
+}
+
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+  border-color: #28A745; /* Keeping as specific hex for success */
+}
+
+.error-msg {
+  color: #DC3545; /* Keeping as specific hex for error */
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Radio Button Group Styling */
+.radio-group {
+  display: flex;
+  gap: 15px; /* Adjust gap between radio options */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-top: 5px; /* Space between label and options */
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px; /* Slightly more padding */
+  border: 2px solid #D1D8DD;
+  border-radius: 25px; /* More rounded */
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  color: var(--text-light); /* Changed from #555 */
+  transition: all 0.2s ease-in-out;
+  user-select: none; /* Prevent text selection */
+}
+
+.radio-option input[type="radio"] {
+  /* Hide default radio button but keep it accessible */
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.radio-option.selected {
+  border-color: var(--primary-color); /* Changed from #008080 */
+  background: rgba(68, 47, 144, 0.1); /* Using primary color rgba */
+  color: var(--primary-color); /* Changed from #006666 */
+  box-shadow: 0 2px 5px rgba(68, 47, 144, 0.1); /* Using primary color rgba */
+}
+
+.radio-option:hover:not(.selected) {
+  border-color: #A9A9A9; /* Keeping as specific hex */
+  background: #F8F8F8; /* Keeping as specific hex */
+}
+
+textarea {
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 80px; /* Minimum height for textarea */
+}
+
+/* Submit Button */
+.submit-btn {
+  background: var(--gradient); /* Applied gradient background */
+  color: var(--white);
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px; /* Slightly larger font */
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  margin-top: 15px; /* Space above button */
+  /* If you want hover to darken the gradient, you might adjust opacity or use a slightly different gradient on hover */
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #4ec7ef , #442f90); /* Slightly darker gradient on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.submit-btn:active {
+  transform: translateY(0); /* Return to original position on click */
+}
+
+/* Phone Input Group with Country Code Selector */
+.phone-input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #D1D8DD; /* Keeping as specific hex for light border */
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: var(--white);
+}
+
+.form-group.error .phone-input-group {
+  border-color: #DC3545; /* Keeping as specific hex for error */
+}
+
+.form-group.success .phone-input-group {
+  border-color: #28A745; /* Keeping as specific hex for success */
+}
+
+.phone-input-group:focus-within {
+  border-color: var(--primary-color); /* Changed from #006666 */
+  box-shadow: 0 0 0 3px rgba(68, 47, 144, 0.2); /* Using primary color rgba */
+}
+
+.phone-input-group input[type="tel"] {
+  border: none; /* Remove individual input border */
+  padding: 12px 14px;
+  width: calc(100% - 120px); /* Adjust width based on country code selector */
+  flex-grow: 1; /* Allow it to take available space */
+  font-size: 16px;
+  background: transparent; /* Transparent background */
+}
+
+.phone-input-group input[type="tel"]:focus {
+  outline: none;
+  box-shadow: none; /* Remove focus shadow as it's on parent */
+}
+
+.country-code-selector {
+  position: relative;
+  width: 120px; /* Fixed width for the selector */
+  flex-shrink: 0;
+  border-right: 1px solid #D1D8DD; /* Keeping as specific hex for light border */
+  cursor: pointer;
+  height: 100%; /* Match parent height */
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.selected-code {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: var(--text-dark); /* Changed from #333 */
+  padding: 0 5px;
+}
+
+.selected-code .flag {
+  margin-right: 8px;
+  font-size: 20px; /* Adjust flag size */
+}
+
+.selected-code .dropdown-arrow {
+  font-size: 10px;
+  margin-left: 5px;
+  color: #888; /* Keeping as specific hex */
+}
+
+.country-code-dropdown {
+  position: absolute;
+  top: 100%; /* Position below the selector */
+  left: -1px; /* Align with left border of parent group */
+  width: calc(100% + 2px); /* Span full width of input group, accounting for border */
+  max-height: 200px;
+  overflow-y: auto;
+  background: var(--white);
+  border: 1px solid #D1D8DD; /* Keeping as specific hex for light border */
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.country-option {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  color: var(--text-dark); /* Changed from #333 */
+  transition: background 0.2s ease;
+}
+
+.country-option:hover {
+  background: #F0F2F5; /* Keeping as specific hex for light hover */
+}
+
+.country-option .flag {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .inquiry-container {
+    padding: 30px;
+  }
+  .form-title {
+    font-size: 24px;
+  }
+  .form-subtitle {
+    font-size: 14px;
+  }
+  .form-group label {
+    font-size: 15px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+  .submit-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+  .radio-option {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  .phone-input-group input[type="tel"] {
+    padding: 10px 12px;
+  }
+  .country-code-selector {
+    width: 100px; /* Slightly smaller width on mobile */
+  }
+  .selected-code, .country-option {
+    font-size: 14px;
+  }
+  .selected-code .flag, .country-option .flag {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inquiry-container {
+    padding: 20px;
+  }
+  .radio-group {
+    flex-direction: column; /* Stack radio options vertically */
+    gap: 10px;
+  } 
+  .radio-option {
+    width: 100%; /* Full width for stacked options */
+    box-sizing: border-box;
+    justify-content: center; /* Center text within the option */
+  }
+}

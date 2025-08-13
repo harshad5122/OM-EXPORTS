@@ -805,6 +805,17 @@ body {
   transform: translateY(0);
 }
 
+/* Animation for floating card */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.export-overlay-card  {
+  animation: float 4s ease-in-out infinite;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-text h1 {

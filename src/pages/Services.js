@@ -115,6 +115,7 @@ const Services = () => {
       {/* Our Services Grid */}
       <section className="our-services">
         <h2 className="section-title">Our Services</h2>
+        <div className="services-bg-shape">
         <div className="services-grid">
           {servicesData.map((service, index) => (
             <div
@@ -128,6 +129,7 @@ const Services = () => {
             </div>
           ))}
         </div>
+        </div>
       </section>
 
       {/* Call to Action */}
@@ -136,7 +138,7 @@ const Services = () => {
         <p className="cta-text">
           Discover how our seamless global solutions can empower your business.
         </p>
-        <button className="cta-button">Get a Quote</button>
+        <button className="cta-button">Inquiry Now</button>
       </section>
     </div>
   );

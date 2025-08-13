@@ -22,7 +22,27 @@ import redChilliImg from "../assets/images/products/red_chilli.jpg";
 import blackPepperImg from "../assets/images/products/black_pepper.jpg"; 
 import cardamomImg from "../assets/images/products/cardamom.jpg"; 
 
+import basmatiRiceImg from "../assets/images/products/basmati_rice.jpg"; 
+import nonBasmatiRiceImg from "../assets/images/products/non_basmati_rice.jpg"; 
+import chickpeasImg from "../assets/images/products/chickpeas.jpg";
 import lentilsImg from "../assets/images/products/lentils.jpg";
+
+import mangoesImg from "../assets/images/products/mangoes.jpg"; 
+import bananasImg from "../assets/images/products/bananas.jpg"; 
+import grapesImg from "../assets/images/products/grapes.jpg"; 
+import pomegranatesImg from "../assets/images/products/pomegranates.jpg"; 
+
+import onionsImg from "../assets/images/products/onions.jpg"; 
+import potatoesImg from "../assets/images/products/potatoes.jpg"; 
+import tomatoesImg from "../assets/images/products/tomatoes.jpg"; 
+import okraImg from "../assets/images/products/okra.jpg"; 
+
+import tShirtImg from "../assets/images/products/t_shirt.jpg"; 
+import kurtiImg from "../assets/images/products/kurti.jpg"; 
+import sareeImg from "../assets/images/products/saree.jpg"; 
+import scarfImg from "../assets/images/products/scarf.jpg"; 
+import shawlImg from "../assets/images/products/shawl.jpg"; 
+
 import cotton_fabricImg from "../assets/images/products/cotton_fabric.jpg";
 
 export const categories = [
@@ -120,6 +140,87 @@ export const products = {
       description: "High-protein lentils with a golden hue, premium quality.",
       image: lentilsImg,
       enquire: true
+    },
+    {
+      id: "pu02",
+      name: "Premium Basmati Rice",
+      description: "Long-grain, aromatic Basmati rice, known for its delicate texture and fragrance. Perfect for biryanis and pilafs.",
+      image: basmatiRiceImg,
+      enquire: true
+    },
+    {
+      id: "pu03",
+      name: "Nutritious Non-Basmati Rice",
+      description: "Versatile and wholesome non-Basmati rice varieties, suitable for everyday meals. Available in various types.",
+      image: nonBasmatiRiceImg,
+      enquire: true
+    },
+    {
+      id: "pu04",
+      name: "Healthy Chickpeas (Chana)",
+      description: "High-fiber and protein-rich chickpeas, perfect for curries, salads, and hummus. Sourced responsibly.",
+      image: chickpeasImg,
+      enquire: true
+    }
+  ],
+  fruits: [
+    {
+      id: "fr01",
+      name: "Farm Fresh Mangoes",
+      description: "Juicy, sweet, and aromatic mangoes, directly from our farms. Seasonal availability.",
+      image: mangoesImg,
+      enquire: true
+    },
+    {
+      id: "fr02",
+      name: "Organic Bananas",
+      description: "Naturally sweet and energy-rich bananas. Perfect for healthy snacking and culinary use.",
+      image: bananasImg,
+      enquire: true
+    },
+    {
+      id: "fr03",
+      name: "Sweet Grapes",
+      description: "Crisp and juicy grapes, ideal for fresh consumption or winemaking.",
+      image: grapesImg,
+      enquire: true
+    },
+    {
+      id: "fr04",
+      name: "Delicious Pomegranates",
+      description: "Ruby red pomegranates, bursting with flavor and antioxidants. Great for juices and salads.",
+      image: pomegranatesImg,
+      enquire: true
+    }
+  ],
+  vegetables: [
+    {
+      id: "ve01",
+      name: "Fresh Onions",
+      description: "High-quality onions, known for their sharp flavor and crisp texture. Essential for various cuisines.",
+      image: onionsImg,
+      enquire: true
+    },
+    {
+      id: "ve02",
+      name: "Quality Potatoes",
+      description: "Versatile potatoes, suitable for frying, boiling, or baking. Farm-fresh and nutritious.",
+      image: potatoesImg,
+      enquire: true
+    },
+    {
+      id: "ve03",
+      name: "Red Tomatoes",
+      description: "Ripe, juicy tomatoes, perfect for sauces, salads, and cooking. Rich in vitamins.",
+      image: tomatoesImg,
+      enquire: true
+    },
+    {
+      id: "ve04",
+      name: "Tender Okra (Ladyfinger)",
+      description: "Fresh and tender okra, ideal for stir-fries and curries. Known for its unique texture.",
+      image: okraImg,
+      enquire: true
     }
   ],
   cotton: [
@@ -130,5 +231,43 @@ export const products = {
       image: cotton_fabricImg,
       enquire: true
     }
-  ]
+  ],
+
+  garments: [
+    {
+      id: "rg01",
+      name: "Stylish T-Shirts",
+      description: "Comfortable and trendy T-shirts for all ages, made from high-quality cotton blends.",
+      image: tShirtImg,
+      enquire: true
+    },
+    {
+      id: "rg02",
+      name: "Elegant Kurtis",
+      description: "Traditional yet modern Kurtis, featuring intricate designs and comfortable fabrics.",
+      image: kurtiImg,
+      enquire: true
+    },
+    {
+      id: "rg03",
+      name: "Exquisite Sarees",
+      description: "Handcrafted sarees, showcasing rich Indian textile heritage with various patterns and fabrics.",
+      image: sareeImg,
+      enquire: true
+    },
+    {
+      id: "rg04",
+      name: "Fashionable Scarves",
+      description: "Versatile scarves in various materials and prints, perfect for adding a touch of style.",
+      image: scarfImg,
+      enquire: true
+    },
+    {
+      id: "rg05",
+      name: "Warm Shawls",
+      description: "Soft and warm shawls, ideal for colder climates or as a stylish accessory.",
+      image: shawlImg,
+      enquire: true
+    }
+  ],
 };
