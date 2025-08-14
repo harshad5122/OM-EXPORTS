@@ -1,18 +1,22 @@
-
 // src/pages/Products.js
 import React, { useState } from "react";
 import "../styles/products.css";
-// Ensure you have an appropriate image for your hero section background
 import backgroundImage from "../assets/images/shiping.jpg"; 
 
 import CategorySlider from "../components/CategorySlider";
 import SubCategoryGrid from "../components/SubCategoryGrid";
 import ProductCard from "../components/ProductCard";
 
-// Importing data
+
 import { categories, subCategories, products } from "../data/productsData";
 
+// Import useLanguage hook
+import { useLanguage } from '../LanguageContext'; // Assuming LanguageContext.js is in the parent directory of 'pages'
+
 const Products = () => {
+  // Get the translation function from the LanguageContext
+  const { t } = useLanguage();
+
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
 
@@ -38,22 +42,21 @@ const Products = () => {
         }}
       >
         <div className="overlay">
-          <h1 className="products-heading">Products</h1>
+          {/* Translated static text */}
+          <h1 className="products-heading">{t('products.heroHeading')}</h1>
           <p className="products-subheading">
-            
- Supplying quality products to customers across the globe.
+            {t('products.heroSubheading')}
           </p>
         </div>
       </section>
 
-      {/* Category Slider */}
+   
       <CategorySlider
-        categories={categories}
+        categories={categories} 
         selectedCategory={selectedCategory}
         onSelectCategory={handleCategorySelect}
       />
 
-      {/* SubCategory Grid - Conditionally rendered based on selectedCategory */}
       {selectedCategory !== "all" && (
         <SubCategoryGrid
           selectedCategory={selectedCategory}
@@ -62,13 +65,11 @@ const Products = () => {
         />
       )}
 
-      {/* Product Cards - Always rendered, but content changes based on selections */}
-      {/* Show products if a subcategory is selected OR if "All Products" is selected */}
       {(selectedSubCategory || selectedCategory === "all") && (
         <ProductCard
           selectedCategory={selectedCategory}
           selectedSubCategory={selectedSubCategory}
-          products={products}
+          products={products} 
         />
       )}
     </div>

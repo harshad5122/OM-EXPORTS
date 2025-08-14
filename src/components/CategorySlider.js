@@ -2,9 +2,11 @@
 import React, { useRef } from "react";
 import "../styles/categorySlider.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useLanguage } from "../LanguageContext"; // Import useLanguage
 
 const CategorySlider = ({ categories, selectedCategory, onSelectCategory }) => {
     const sliderRef = useRef(null);
+    const { t } = useLanguage(); // Get the translation function
 
   const scrollLeft = () => {
     sliderRef.current.scrollBy({ left: -200, behavior: "smooth" });
@@ -29,7 +31,8 @@ const CategorySlider = ({ categories, selectedCategory, onSelectCategory }) => {
             }`}
             onClick={() => onSelectCategory(cat.id)}
           >
-            {cat.name}
+            {/* Use t() to translate the category name based on nameKey */}
+            {t(cat.nameKey)}
             {selectedCategory === cat.id && <span className="underline"></span>}
           </button>
         ))}

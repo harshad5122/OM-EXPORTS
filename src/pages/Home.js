@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
-// import Footer from '../components/Footer';
 import '../styles/home.css';
+import { useLanguage } from '../LanguageContext'; 
+import { Link } from 'react-router-dom';
 
 import heroImage from '../assets/images/slide1.jpg';
 import serviceImage1 from '../assets/images/product-sourcing.jpg';
@@ -11,38 +12,36 @@ import bgImage2 from '../assets/images/business.jpg';
 import bgImage1 from '../assets/images/shipping.jpg';
 import worldMap from '../assets/images/map3.jpg';
 
-
 import packageIcon from '../assets/icons/package.png';
 import logisticsIcon from '../assets/icons/logistics.png';
 import qualityIcon from '../assets/icons/quality.png';
 
-
 const Home = () => {
+  const { t } = useLanguage(); // Get translation function
   const serviceRefs = useRef([]);
-serviceRefs.current = [];
+  serviceRefs.current = [];
 
-const addToRefs = (el) => {
-  if (el && !serviceRefs.current.includes(el)) {
-    serviceRefs.current.push(el);
-  }
-};
+  const addToRefs = (el) => {
+    if (el && !serviceRefs.current.includes(el)) {
+      serviceRefs.current.push(el);
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-           if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // Stop observing once visible
-        }
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
         });
       },
       { threshold: 0.1 }
     );
 
     serviceRefs.current.forEach((el) => observer.observe(el));
-
-  return () => observer.disconnect();
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -55,11 +54,11 @@ const addToRefs = (el) => {
         <div className="hero-content">
           <div className="container">
             <div className="hero-text">
-              <h1>Global Export Solutions</h1>
-              <p>Connecting India to the world with premium quality products and reliable logistics services</p>
+              <h1>{t('home.heroTitle')}</h1>
+              <p>{t('home.heroSubtitle')}</p>
               <div className="hero-buttons">
-                <button className="btn-primary">Get Started</button>
-                <button className="btn-secondary">Learn More</button>
+                <button className="btn-primary">{t('home.getStarted')}</button>
+                <button className="btn-secondary">{t('home.learnMore')}</button>
               </div>
             </div>
           </div>
@@ -69,194 +68,179 @@ const addToRefs = (el) => {
       <section className="about-section">
         <div className="container text-center">
           <h2 className="about-headings">
-            {"Empowering Global Trade"}<br />{"With Indian Excellence"}
+            {t('home.aboutHeading')}
           </h2>
           <p className="about-subtext">
-            OM Exports is your trusted gateway to premium Indian products across the globe. With a focus on quality, reliability, and timely delivery, we simplify international trade and ensure satisfaction with every shipment.
+            {t('home.aboutDescription')}
           </p>
-          <button className="about-btn">About Us ➞</button>
+          {/* <button className="about-btn">{t('home.aboutButton')} ➞</button> */}
+          <Link to="/about" className="about-btn">{t('home.aboutButton')} ➞</Link>
 
           <div className="about-services">
             <div className="about-card">
               <div className="about-icon">
-                <img src={packageIcon} alt="Export Packaging Icon" />
-                </div>
-              <h3>Export-Ready Packaging</h3>
-              <p>Our products are securely packed to meet global compliance and withstand international transit.</p>
+                <img src={packageIcon} alt={t('home.packageAlt')} />
+              </div>
+              <h3>{t('home.packageTitle')}</h3>
+              <p>{t('home.packageDescription')}</p>
             </div>
             <div className="about-card">
               <div className="about-icon">
-                <img src={logisticsIcon} alt="Worldwide Shipping Icon" />
-                </div>
-              <h3>Worldwide Shipping</h3>
-              <p>We export to over 30 countries with reliable logistics partnerships ensuring timely delivery.</p>
+                <img src={logisticsIcon} alt={t('home.logisticsAlt')} />
+              </div>
+              <h3>{t('home.logisticsTitle')}</h3>
+              <p>{t('home.logisticsDescription')}</p>
             </div>
             <div className="about-card">
               <div className="about-icon">
-                <img src={qualityIcon} alt="Quality Assured Icon" />
-                </div>
-              <h3>Quality Assured Products</h3>
-              <p>Every item is hand-checked and certified to meet the standards expected by international buyers.</p>
+                <img src={qualityIcon} alt={t('home.qualityAlt')} />
+              </div>
+              <h3>{t('home.qualityTitle')}</h3>
+              <p>{t('home.qualityDescription')}</p>
             </div>
           </div>
         </div>
       </section>
 
-      
       {/* Impact Section */}
-<section className="impact-section">
-  <div className="container">
-    <div className="impact-content">
-      <div className="impact-images">
-        <div className="impact-image-1">
-          <img src={bgImage1} alt="Export Office" />
-        </div>
-        <div className="impact-image-2">
-          <img src={bgImage2} alt="Business Meeting" />
-        </div>
-      </div>
-      <div className="impact-text">
-        <h2>Empowering Global Trade<br />with Excellence</h2>
-        <p>At OM Exports, we specialize in delivering high-quality Indian goods to clients worldwide. From textiles to handicrafts, we ensure timely delivery, reliable service, and unmatched value.</p>
-        <button className="impact-btn">Get Your Place →</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* Export Excellence Section */}
-<section className="export-excellence">
-  <div className="export-container">
-    
-    {/* Left Content */}
-    <div className="export-left">
-      <h2>
-        Delivering Excellence in <br />
-        Global Trade Solutions
-      </h2>
-      <p>
-        At OM Exports, we provide secure, efficient, and quality-driven export 
-        solutions that meet international standards. From custom packaging to 
-        reliable global shipping, we ensure your products arrive safely and on time.
-      </p>
-
-      <div className="export-features">
-        <div className="feature-item">
-          <div className="feature-icon">
-            <img src={packageIcon} alt="Packaging" />
+      <section className="impact-section">
+        <div className="container">
+          <div className="impact-content">
+            <div className="impact-images">
+              <div className="impact-image-1">
+                <img src={bgImage1} alt={t('home.impactImage1Alt')} />
+              </div>
+              <div className="impact-image-2">
+                <img src={bgImage2} alt={t('home.impactImage2Alt')} />
+              </div>
+            </div>
+            <div className="impact-text">
+              <h2>{t('home.impactTitle')}</h2>
+              <p>{t('home.impactDescription')}</p>
+              <button className="impact-btn">{t('home.impactButton')} →</button>
+            </div>
           </div>
-          <span>Export-Ready Packaging</span>
         </div>
+      </section>
 
-        <div className="feature-item">
-          <div className="feature-icon">
-            <img src={logisticsIcon} alt="Logistics" />
+      {/* Export Excellence Section */}
+      <section className="export-excellence">
+        <div className="export-container">
+          <div className="export-left">
+            <h2>{t('home.exportTitle')}</h2>
+            <p>{t('home.exportDescription')}</p>
+
+            <div className="export-features">
+              <div className="feature-item">
+                <div className="feature-icon">
+                  <img src={packageIcon} alt={t('home.exportPackageAlt')} />
+                </div>
+                <span>{t('home.exportPackageTitle')}</span>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">
+                  <img src={logisticsIcon} alt={t('home.exportLogisticsAlt')} />
+                </div>
+                <span>{t('home.exportLogisticsTitle')}</span>
+              </div>
+            </div>
+
+            <button className="export-btn">{t('home.exportButton')} →</button>
           </div>
-          <span>Worldwide Shipping</span>
+
+          <div className="export-right">
+            <div className="export-image">
+              <img src={worldMap} alt={t('home.exportImageAlt')} />
+              <div className="export-overlay-card">
+                <h4>{t('home.exportOverlayTitle')}</h4>
+                <p>{t('home.exportOverlayDescription')}</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <button className="export-btn">Learn More →</button>
-    </div>
+      {/* Services Section */}
+      <section className="services-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-badge">{t('home.servicesBadge')}</span>
+            <h2>{t('home.servicesTitle')}</h2>
+            <p>{t('home.servicesSubtitle')}</p>
+          </div>
 
-    {/* Right Image */}
-    <div className="export-right">
-      <div className="export-image">
-        <img src={worldMap} alt="Global Trade" />
-        <div className="export-overlay-card">
-          <h4>Quality You Can Trust</h4>
-          <p>
-            Certified products, inspected and packed to withstand 
-            international transit without compromise.
-          </p>
+          <div className="services-grid">
+            <div ref={addToRefs} className="service-card fade-in">
+              <div className="service-image">
+                <img
+                  src={serviceImage1}
+                  alt={t('home.service1Alt')}
+                  loading="lazy"
+                  width="400"
+                  height="250"
+                />
+              </div>
+              <div className="service-content">
+                <h3>{t('home.service1Title')}</h3>
+                <p>{t('home.service1Description')}</p>
+                <button className="service-btn">{t('home.serviceButton')} →</button>
+              </div>
+            </div>
+
+            <div ref={addToRefs} className="service-card fade-in">
+              <div className="service-image">
+                <img
+                  src={serviceImage2}
+                  alt={t('home.service2Alt')}
+                  loading="lazy"
+                  width="400"
+                  height="250"
+                />
+              </div>
+              <div className="service-content">
+                <h3>{t('home.service2Title')}</h3>
+                <p>{t('home.service2Description')}</p>
+                <button className="service-btn">{t('home.serviceButton')} →</button>
+              </div>
+            </div>
+
+            <div ref={addToRefs} className="service-card fade-in">
+              <div className="service-image">
+                <img
+                  src={serviceImage3}
+                  alt={t('home.service3Alt')}
+                  loading="lazy"
+                  width="400"
+                  height="250"
+                />
+              </div>
+              <div className="service-content">
+                <h3>{t('home.service3Title')}</h3>
+                <p>{t('home.service3Description')}</p>
+                <button className="service-btn">{t('home.serviceButton')} →</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-     {/* Services Section */}
-<section className="services-section">
-  <div className="container">
-    <div className="section-header">
-      <span className="section-badge">Our Services</span>
-      <h2>Complete Export Solutions</h2>
-      <p>From sourcing to delivery, we handle every aspect of your export requirements</p>
-    </div>
-
-    <div className="services-grid">
-      <div ref={addToRefs} className="service-card fade-in">
-        <div className="service-image">
-          <img
-            src={serviceImage1}
-            alt="Product Sourcing"
-            loading="lazy"
-            width="400"
-            height="250"
-          />
-        </div>
-        <div className="service-content">
-          <h3>Product Sourcing</h3>
-          <p>We source the finest quality products from trusted manufacturers across India</p>
-          <button className="service-btn">Learn More →</button>
-        </div>
-      </div>
-
-      <div ref={addToRefs} className="service-card fade-in">
-        <div className="service-image">
-          <img
-            src={serviceImage2}
-            alt="Quality Control"
-            loading="lazy"
-            width="400"
-            height="250"
-          />
-        </div>
-        <div className="service-content">
-          <h3>Quality Control</h3>
-          <p>Rigorous quality checks ensure only the best products reach our international clients</p>
-          <button className="service-btn">Learn More →</button>
-        </div>
-      </div>
-
-      <div ref={addToRefs} className="service-card fade-in">
-        <div className="service-image">
-          <img
-            src={serviceImage3}
-            alt="Logistics"
-            loading="lazy"
-            width="400"
-            height="250"
-          />
-        </div>
-        <div className="service-content">
-          <h3>Global Logistics</h3>
-          <p>Efficient shipping and logistics solutions for timely delivery worldwide</p>
-          <button className="service-btn">Learn More →</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
           <div className="cta-content">
-            <h2>Looking for a Trusted Export Partner from India?</h2>
-            <p>Join hands with OM Exports – your reliable source for quality products, timely delivery, and personalized export solutions tailored for global businesses.</p>
+            <h2>{t('home.ctaTitle')}</h2>
+            <p>{t('home.ctaDescription')}</p>
             <div className="cta-buttons">
-              <button className="btn-primary">Inquiry Now</button>
-              <button className="btn-secondary">Contact Us</button>
+              {/* <button className="btn-primary">{t('home.ctaButton1')}</button>
+              <button className="btn-secondary">{t('home.ctaButton2')}</button> */}
+              <Link to="/inquiry" className="btn-primary">{t('home.ctaButton1')}</Link>
+              {/* Contact Us Button */}
+              <Link to="/contact" className="btn-secondary">{t('home.ctaButton2')}</Link>
             </div>
           </div>
         </div>
       </section>
-{/* 
-      <Footer /> */}
     </div>
   );
 };

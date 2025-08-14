@@ -1,31 +1,3 @@
-// import "../styles/services.css";
-// import backgroundImage from "../assets/images/shiping.jpg"; 
-
-// const Services = () => {
-//     return(
-//         <div className="services-container">
-
-//              {/* Hero Section */}
-//       <section
-//         className="services-hero"
-//         style={{
-//           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
-//         }}
-//       >
-//         <div className="overlay">
-//           <h1 className="services-heading">Services</h1>
-//           <p className="services-subheading">
-            
-// Providing expert solutions with quality and reliability.
-//           </p>
-//         </div>
-//       </section>
-//         </div>
-//     );
-// }
-
-// export default Services;
-
 // src/pages/Services.js
 import React, { useEffect } from "react";
 import "../styles/services.css";
@@ -38,47 +10,55 @@ import {
   FaTruckMoving,
   FaTags,
 } from "react-icons/fa";
+// Import the useLanguage hook
+import { useLanguage } from '../LanguageContext';
+import { Link } from 'react-router-dom';
 
-const servicesData = [
-  {
-    icon: <FaBoxes />,
-    title: "Product Sourcing & Procurement",
-    description:
-      "We source premium products directly from trusted suppliers, ensuring international quality standards.",
-  },
-  {
-    icon: <FaCheckCircle />,
-    title: "Quality Inspection & Assurance",
-    description:
-      "Every shipment is checked by our expert quality control team to meet client requirements.",
-  },
-  {
-    icon: <FaBoxOpen />,
-    title: "Packaging & Labeling",
-    description:
-      "We provide tailored packaging and labeling to match your brand and compliance needs.",
-  },
-  {
-    icon: <FaFileInvoice />,
-    title: "Export Documentation & Compliance",
-    description:
-      "We handle all export paperwork to ensure smooth customs clearance worldwide.",
-  },
-  {
-    icon: <FaTruckMoving />,
-    title: "Logistics & Shipping",
-    description:
-      "Our global logistics ensure on-time delivery via sea, air, or land — with real-time tracking.",
-  },
-  {
-    icon: <FaTags />,
-    title: "Private Label Services",
-    description:
-      "From design to delivery, we produce goods under your brand with full confidentiality.",
-  },
-];
 
 const Services = () => {
+
+  const { t } = useLanguage();
+
+  const rawServicesData = [
+    {
+      icon: <FaBoxes />,
+      titleKey: "services.card1.title",
+      descriptionKey: "services.card1.description",
+    },
+    {
+      icon: <FaCheckCircle />,
+      titleKey: "services.card2.title",
+      descriptionKey: "services.card2.description",
+    },
+    {
+      icon: <FaBoxOpen />,
+      titleKey: "services.card3.title",
+      descriptionKey: "services.card3.description",
+    },
+    {
+      icon: <FaFileInvoice />,
+      titleKey: "services.card4.title",
+      descriptionKey: "services.card4.description",
+    },
+    {
+      icon: <FaTruckMoving />,
+      titleKey: "services.card5.title",
+      descriptionKey: "services.card5.description",
+    },
+    {
+      icon: <FaTags />,
+      titleKey: "services.card6.title",
+      descriptionKey: "services.card6.description",
+    },
+  ];
+
+  // Map the raw data to include translated titles and descriptions
+  const servicesData = rawServicesData.map(item => ({
+    icon: item.icon,
+    title: t(item.titleKey),
+    description: t(item.descriptionKey),
+  }));
+
   useEffect(() => {
     const cards = document.querySelectorAll(".service-card");
     const revealOnScroll = () => {
@@ -105,16 +85,16 @@ const Services = () => {
         }}
       >
         <div className="overlay">
-          <h1 className="services-heading">Services</h1>
+          <h1 className="services-heading">{t('services.heroHeading')}</h1>
           <p className="services-subheading">
-            Providing expert solutions with quality and reliability.
+            {t('services.heroSubheading')}
           </p>
         </div>
       </section>
 
       {/* Our Services Grid */}
       <section className="our-services">
-        <h2 className="section-title">Our Services</h2>
+        <h2 className="section-title">{t('services.sectionTitle')}</h2>
         <div className="services-bg-shape">
         <div className="services-grid">
           {servicesData.map((service, index) => (
@@ -134,11 +114,14 @@ const Services = () => {
 
       {/* Call to Action */}
       <section className="cta-section">
-        <h2 className="cta-title">Ready to Partner With Us?</h2>
+        <h2 className="cta-title">{t('services.ctaTitle')}</h2>
         <p className="cta-text">
-          Discover how our seamless global solutions can empower your business.
+          {t('services.ctaText')}
         </p>
-        <button className="cta-button">Inquiry Now</button>
+        {/* <button className="cta-button">{t('services.ctaButton')}</button> */}
+        <Link to="/inquiry" className="cta-button">
+          {t('services.ctaButton')}
+        </Link>
       </section>
     </div>
   );

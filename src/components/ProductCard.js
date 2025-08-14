@@ -1,7 +1,11 @@
+// src/components/ProductCard.js
 import React from "react";
 import "../styles/productCard.css";
+import { useLanguage } from "../LanguageContext"; // Import useLanguage
 
 const ProductCard = ({ selectedCategory, selectedSubCategory, products }) => {
+  const { t } = useLanguage(); // Get the translation function
+
   // Decide which products to show
   let displayProducts = [];
 
@@ -9,7 +13,7 @@ const ProductCard = ({ selectedCategory, selectedSubCategory, products }) => {
     // If subcategory selected → only those products
     displayProducts = products[selectedSubCategory] || [];
   } else if (selectedCategory === "all") {
-    // If 'All Products' selected → merge all products
+    // If 'All Products' selected → merge all products from all subcategories
     displayProducts = Object.values(products).flat();
   }
 
@@ -26,13 +30,16 @@ const ProductCard = ({ selectedCategory, selectedSubCategory, products }) => {
             style={{ animationDelay: `${index * 0.15}s` }}
           >
             <div className="product-image">
-              <img src={product.image} alt={product.name} />
+              {/* Use t() for alt text based on nameKey */}
+              <img src={product.image} alt={t(product.nameKey)} />
             </div>
             <div className="product-content">
-              <h2 className="product-title">{product.name}</h2>
-              <p className="product-description">{product.description}</p>
+              {/* Use t() to translate the product name based on nameKey */}
+              <h2 className="product-title">{t(product.nameKey)}</h2>
+              {/* Use t() to translate the product description based on descriptionKey */}
+              <p className="product-description">{t(product.descriptionKey)}</p>
               {product.enquire && (
-                <button className="enquire-button">Enquire Now</button>
+                <button className="enquire-button">{t('products.enquireNow')}</button>
               )}
             </div>
           </div>

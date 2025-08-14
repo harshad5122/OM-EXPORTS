@@ -1,12 +1,13 @@
 import '../styles/about.css';
 import backgroundImage from '../assets/images/shiping.jpg';
-// import Footer from '../components/Footer';
 import product1 from '../assets/images/product-sourcing.jpg';
-// import product2 from '../assets/images/slide2.jpg';
 import exportImage1 from '../assets/images/maps.jpg';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+// Import the useLanguage hook
+import { useLanguage } from '../LanguageContext'; 
 
 import apedaLogo from '../assets/certificates/apeda.png';
 import isoLogo from '../assets/certificates/iso.png';
@@ -18,6 +19,9 @@ import gstLogo from '../assets/certificates/gst.png';
 
 
 const About = () => {
+  // Use the useLanguage hook to get the translation function
+  const { t } = useLanguage();
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -37,9 +41,9 @@ const About = () => {
         }}
       >
         <div className="overlay">
-          <h1 className="about-heading">About Us</h1>
+          <h1 className="about-heading">{t('about.heroHeading')}</h1>
           <p className="about-subheading">
-            At Om Exports, we specialize in bridging markets and forging reliable global trade connections. With decades of combined experience in the import-export industry.
+            {t('about.heroSubheading')}
           </p>
         </div>
       </section>
@@ -50,30 +54,30 @@ const About = () => {
         <div className="container">
           <div className="content-wrapper">
             <div className="text-content" data-aos="fade-right">
-              <h2>Who We Are</h2>
+              <h2>{t('about.whoWeAreHeading')}</h2>
               <p className="lead-text">
-                OM EXPORTS is a premium exporter of high-quality agricultural products with a legacy of excellence.
+                {t('about.whoWeAreLeadText')}
               </p>
               <div className="features-list">
                 <div className="feature-item" data-aos="fade-up" data-aos-delay="100">
                   <div className="feature-icon">✓</div>
                   <div className="feature-text">
-                    <h4>Global Presence</h4>
-                    <p>Exporting to 25+ countries with trusted partnerships</p>
+                    <h4>{t('about.globalPresenceTitle')}</h4>
+                    <p>{t('about.globalPresenceDescription')}</p>
                   </div>
                 </div>
                 <div className="feature-item" data-aos="fade-up" data-aos-delay="200">
                   <div className="feature-icon">✓</div>
                   <div className="feature-text">
-                    <h4>Quality Assurance</h4>
-                    <p>Stringent quality control at every production stage</p>
+                    <h4>{t('about.qualityAssuranceTitle')}</h4>
+                    <p>{t('about.qualityAssuranceDescription')}</p>
                   </div>
                 </div>
                 <div className="feature-item" data-aos="fade-up" data-aos-delay="300">
                   <div className="feature-icon">✓</div>
                   <div className="feature-text">
-                    <h4>Sustainable Practices</h4>
-                    <p>Ethical sourcing and eco-friendly packaging</p>
+                    <h4>{t('about.sustainablePracticesTitle')}</h4>
+                    <p>{t('about.sustainablePracticesDescription')}</p>
                   </div>
                 </div>
               </div>
@@ -81,34 +85,22 @@ const About = () => {
 
             <div className="image-content" data-aos="fade-left">
               <div className="main-image">
-                <img src={product1} alt="Our Global Operations" />
+                <img src={product1} alt={t('about.globalOperationsAlt')} />
               </div>
               <div className="floating-card" data-aos="fade-up" data-aos-delay="400">
                 <div className="card-content">
-                  <h3>Driven by Excellence</h3>
-                  <p>Delivering quality products and building lasting global partnerships.</p>
+                  <h3>{t('about.drivenByExcellenceTitle')}</h3>
+                  <p>{t('about.drivenByExcellenceDescription')}</p>
                   <div className="stats-grid">
                     <div className="stat-item">
                       <div className="stat-number">100%</div>
-                      <div className="stat-label">Commitment</div>
+                      <div className="stat-label">{t('about.commitmentLabel')}</div>
                     </div>
                     <div className="stat-item">
                       <div className="stat-number">10+</div>
-                      <div className="stat-label">Product Categories</div>
+                      <div className="stat-label">{t('about.productCategoriesLabel')}</div>
                     </div>
                   </div>
-                  {/* <h3>Since 2005</h3>
-                  <p>18+ years of trusted global exports</p>
-                  <div className="stats-grid"> */}
-                  {/* <div className="stat-item">
-                      <div className="stat-number">500+</div>
-                      <div className="stat-label">Clients</div>
-                    </div>
-                    <div className="stat-item">
-                      <div className="stat-number">25+</div>
-                      <div className="stat-label">Countries</div>
-                    </div> */}
-                  {/* </div> */}
                 </div>
               </div>
             </div>
@@ -121,20 +113,19 @@ const About = () => {
       <section className="about-content">
         <div className="content-wrapper">
           <div className="image-section">
-            <img src={exportImage1} alt="Global Export Network" />
+            <img src={exportImage1} alt={t('about.globalExportNetworkAlt')} />
           </div>
           <div className="text-section">
-            <h2>Our Export Services</h2>
+            <h2>{t('about.exportServicesHeading')}</h2>
             <p>
-              OM EXPORTS provides comprehensive export solutions for agricultural commodities.
-              Our services include:
+              {t('about.exportServicesDescription')}
             </p>
             <ul className="export-services-list">
-              <li>International logistics coordination</li>
-              <li>Customs clearance assistance</li>
-              <li>Quality inspection & certification</li>
-              <li>Documentation & compliance management</li>
-              <li>Market analysis & trade consulting</li>
+              <li>{t('about.logisticsCoordination')}</li>
+              <li>{t('about.customsAssistance')}</li>
+              <li>{t('about.qualityInspection')}</li>
+              <li>{t('about.documentationManagement')}</li>
+              <li>{t('about.marketAnalysis')}</li>
             </ul>
           </div>
         </div>
@@ -143,66 +134,66 @@ const About = () => {
       {/* Certificates Section */}
       <section className="certificates-section">
         <div className="container">
-          <h2 data-aos="fade-up">Our Certifications & Accreditations</h2>
+          <h2 data-aos="fade-up">{t('about.certificationsHeading')}</h2>
           <p className="subtitle" data-aos="fade-up" data-aos-delay="100">
-            Quality assurance through internationally recognized certifications
+            {t('about.certificationsSubtitle')}
           </p>
 
           <div className="certificates-grid">
             <div className="certificate-card" data-aos="zoom-in" data-aos-delay="200">
               <div className="certificate-logo">
-                <img src={apedaLogo} alt="APEDA Certified" />
+                <img src={apedaLogo} alt={t('about.apedaCertifiedAlt')} />
               </div>
-              <h3>APEDA Registered</h3>
-              <p>Agricultural and Processed Food Products Export Development Authority</p>
+              <h3>{t('about.apedaTitle')}</h3>
+              <p>{t('about.apedaDescription')}</p>
             </div>
 
             <div className="certificate-card" data-aos="zoom-in" data-aos-delay="300">
               <div className="certificate-logo">
-                <img src={isoLogo} alt="ISO Certified" />
+                <img src={isoLogo} alt={t('about.isoCertifiedAlt')} />
               </div>
-              <h3>ISO 9001:2015</h3>
-              <p>International Quality Management System Certification</p>
+              <h3>{t('about.isoTitle')}</h3>
+              <p>{t('about.isoDescription')}</p>
             </div>
 
             <div className="certificate-card" data-aos="zoom-in" data-aos-delay="400">
               <div className="certificate-logo">
-                <img src={fssaiLogo} alt="FSSAI Certified" />
+                <img src={fssaiLogo} alt={t('about.fssaiCertifiedAlt')} />
               </div>
-              <h3>FSSAI Certified</h3>
-              <p>Food Safety and Standards Authority of India</p>
+              <h3>{t('about.fssaiTitle')}</h3>
+              <p>{t('about.fssaiDescription')}</p>
             </div>
 
             <div className="certificate-card" data-aos="zoom-in" data-aos-delay="500">
               <div className="certificate-logo">
-                <img src={usdaLogo} alt="USDA Certified" />
+                <img src={usdaLogo} alt={t('about.usdaCertifiedAlt')} />
               </div>
-              <h3>USDA Approved</h3>
-              <p>United States Department of Agriculture</p>
+              <h3>{t('about.usdaTitle')}</h3>
+              <p>{t('about.usdaDescription')}</p>
             </div>
 
             <div className="certificate-card" data-aos="zoom-in" data-aos-delay="600">
               <div className="certificate-logo">
-                <img src={halalLogo} alt="Halal Certified" />
+                <img src={halalLogo} alt={t('about.halalCertifiedAlt')} />
               </div>
-              <h3>Halal Certified</h3>
-              <p>Internationally Recognized Halal Certification</p>
+              <h3>{t('about.halalTitle')}</h3>
+              <p>{t('about.halalDescription')}</p>
             </div>
 
             <div className="certificate-card" data-aos="zoom-in" data-aos-delay="700">
               <div className="certificate-logo">
-                <img src={iecLogo} alt="IEC Certified" />
+                <img src={iecLogo} alt={t('about.iecCertifiedAlt')} />
               </div>
-              <h3>IEC Certified</h3>
-              <p>Import Export Code Certification</p>
+              <h3>{t('about.iecTitle')}</h3>
+              <p>{t('about.iecDescription')}</p>
             </div>
 
             <div className="certificate-card" data-aos="zoom-in" data-aos-delay="800">
               <div className="certificate-logo">
-                <img src={gstLogo} alt="GST Certified" />
+                <img src={gstLogo} alt={t('about.gstCertifiedAlt')} />
               </div>
-              <h3>GST Certified</h3>
-              <p>Goods & Services Tax Certification</p>
+              <h3>{t('about.gstTitle')}</h3>
+              <p>{t('about.gstDescription')}</p>
             </div>
           </div>
         </div>

@@ -1,7 +1,11 @@
+// src/components/SubCategoryGrid.js
 import React from "react";
 import "../styles/subCategoryGrid.css";
+import { useLanguage } from "../LanguageContext"; // Import useLanguage
 
 const SubCategoryGrid = ({ selectedCategory, subCategories, onSelectSubCategory }) => {
+  const { t } = useLanguage(); // Get the translation function
+
   if (!selectedCategory || !subCategories[selectedCategory]) return null;
 
   return (
@@ -12,12 +16,14 @@ const SubCategoryGrid = ({ selectedCategory, subCategories, onSelectSubCategory 
             key={sub.id}
             className="subcategory-card"
             style={{ animationDelay: `${index * 0.15}s` }}
-            onClick={() => onSelectSubCategory(sub.id)} // ✅ When clicked, set subcategory
+            onClick={() => onSelectSubCategory(sub.id)}
           >
             <div className="subcategory-icon">
-              <img src={sub.icon} alt={sub.name} />
+              {/* Use t() for alt text based on nameKey */}
+              <img src={sub.icon} alt={t(sub.nameKey)} />
             </div>
-            <h3>{sub.name}</h3>
+            {/* Use t() to translate the subcategory name based on nameKey */}
+            <h3>{t(sub.nameKey)}</h3>
           </div>
         ))}
       </div>

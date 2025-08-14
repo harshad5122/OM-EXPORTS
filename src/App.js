@@ -7,10 +7,12 @@ import Services from './pages/Services';
 import Products from './pages/Products';
 import Footer from './components/Footer';
 import Inquiry from './pages/Inquiry';
+import { LanguageProvider } from "./LanguageContext";
 
 
 function App() {
   return (
+     <LanguageProvider>
     <Router>
       <Navbar />
       <Routes>
@@ -23,6 +25,7 @@ function App() {
       </Routes>
       <Footer/>
     </Router>
+    </LanguageProvider>
   );
 }
 
