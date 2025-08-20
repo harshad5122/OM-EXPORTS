@@ -1,7 +1,5 @@
 import '../styles/about.css';
-import backgroundImage from '../assets/images/shiping.jpg';
-import product1 from '../assets/images/product-sourcing.jpg';
-import exportImage1 from '../assets/images/maps.jpg';
+
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -9,13 +7,30 @@ import 'aos/dist/aos.css';
 // Import the useLanguage hook
 import { useLanguage } from '../LanguageContext'; 
 
-import apedaLogo from '../assets/certificates/apeda.png';
-import isoLogo from '../assets/certificates/iso.png';
-import fssaiLogo from '../assets/certificates/fssai.png';
-import usdaLogo from '../assets/certificates/usda.png';
-import halalLogo from '../assets/certificates/halal.png';
-import iecLogo from '../assets/certificates/iec.png';
-import gstLogo from '../assets/certificates/gst.png';
+// import backgroundImage from '../assets/images/shiping.jpg';
+// import product1 from '../assets/images/product-sourcing.jpg';
+// import exportImage1 from '../assets/images/maps.jpg';
+
+// import apedaLogo from '../assets/certificates/apeda.png';
+// import isoLogo from '../assets/certificates/iso.png';
+// import fssaiLogo from '../assets/certificates/fssai.png';
+// import usdaLogo from '../assets/certificates/usda.png';
+// import halalLogo from '../assets/certificates/halal.png';
+// import iecLogo from '../assets/certificates/iec.png';
+// import gstLogo from '../assets/certificates/gst.png';
+
+
+import backgroundImage from '../assets/optimized/images/shiping.webp';
+import product1 from '../assets/optimized/images/product-sourcing.webp';
+import exportImage1 from '../assets/optimized/images/maps.webp';
+
+import apedaLogo from '../assets/optimized/certificates/apeda.webp';
+import isoLogo from '../assets/optimized/certificates/iso.webp';
+import fssaiLogo from '../assets/optimized/certificates/fssai.webp';
+import usdaLogo from '../assets/optimized/certificates/usda.webp';
+import halalLogo from '../assets/optimized/certificates/halal.webp';
+import iecLogo from '../assets/optimized/certificates/iec.webp';
+import gstLogo from '../assets/optimized/certificates/gst.webp';
 
 
 const About = () => {

@@ -1,8 +1,8 @@
 // src/pages/Products.js
 import React, { useState } from "react";
 import "../styles/products.css";
-import backgroundImage from "../assets/images/shiping.jpg"; 
-
+// import backgroundImage from "../assets/images/shiping.jpg"; 
+import backgroundImage from "../assets/optimized/images/shiping.webp"; 
 import CategorySlider from "../components/CategorySlider";
 import SubCategoryGrid from "../components/SubCategoryGrid";
 import ProductCard from "../components/ProductCard";

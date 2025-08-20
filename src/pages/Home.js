@@ -4,17 +4,26 @@ import '../styles/home.css';
 import { useLanguage } from '../LanguageContext'; 
 import { Link } from 'react-router-dom';
 
-import heroImage from '../assets/images/slide1.jpg';
-import serviceImage1 from '../assets/images/product-sourcing.jpg';
-import serviceImage2 from '../assets/images/quality-control.jpg';
-import serviceImage3 from '../assets/images/slide3.jpg';
-import bgImage2 from '../assets/images/business.jpg';
-import bgImage1 from '../assets/images/shipping.jpg';
-import worldMap from '../assets/images/map3.jpg';
+// import heroImage from '../assets/images/slide1.jpg';
+// import serviceImage1 from '../assets/images/product-sourcing.jpg';
+// import serviceImage2 from '../assets/images/quality-control.jpg';
+// import serviceImage3 from '../assets/images/slide3.jpg';
+// import bgImage2 from '../assets/images/business.jpg';
+// import bgImage1 from '../assets/images/shipping.jpg';
+// import worldMap from '../assets/images/map3.jpg';
 
-import packageIcon from '../assets/icons/package.png';
-import logisticsIcon from '../assets/icons/logistics.png';
-import qualityIcon from '../assets/icons/quality.png';
+import heroImage from '../assets/optimized/images/slide1.webp';
+import serviceImage1 from '../assets/optimized/images/product-sourcing.webp';
+import serviceImage2 from '../assets/optimized/images/quality-control.webp';
+import serviceImage3 from '../assets/optimized/images/slide3.webp';
+import bgImage2 from '../assets/optimized/images/business.webp';
+import bgImage1 from '../assets/optimized/images/shipping.webp';
+import worldMap from '../assets/optimized/images/map3.webp';
+
+
+import packageIcon from '../assets/optimized/icons/package.webp';
+import logisticsIcon from '../assets/optimized/icons/logistics.webp';
+import qualityIcon from '../assets/optimized/icons/quality.webp';
 
 const Home = () => {
   const { t } = useLanguage(); // Get translation function
@@ -66,7 +75,7 @@ const Home = () => {
       </section>
 
       <section className="about-section">
-        <div className="container text-center">
+        <div className="container text-center"> 
           <h2 className="about-headings">
             {t('home.aboutHeading')}
           </h2>

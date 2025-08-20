@@ -22,7 +22,7 @@ body {
   /* background: #F0F2F5;  */
    background: 
     linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), 
-    url('../assets/images/inquiry-background.jpg') center/cover no-repeat; 
+    url('../assets/optimized/images/inquiry-background.webp') center/cover no-repeat; 
   padding: 40px 0;
   padding-top: 10%;
   min-height: 100vh; /* Ensure it takes full height */
@@ -305,7 +305,7 @@ textarea {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .inquiry-container {
     padding: 30px;
   }
@@ -336,7 +336,7 @@ textarea {
     padding: 10px 12px;
   }
   .country-code-selector {
-    width: 100px; /* Slightly smaller width on mobile */
+    width: 100px; 
   }
   .selected-code, .country-option {
     font-size: 14px;
@@ -344,19 +344,135 @@ textarea {
   .selected-code .flag, .country-option .flag {
     font-size: 18px;
   }
-}
+} */
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .inquiry-container {
     padding: 20px;
   }
   .radio-group {
-    flex-direction: column; /* Stack radio options vertically */
-    gap: 10px;
+    flex-direction: column; 
   } 
   .radio-option {
-    width: 100%; /* Full width for stacked options */
+    width: 100%; 
     box-sizing: border-box;
-    justify-content: center; /* Center text within the option */
+    justify-content: center; 
+  }
+} */
+
+/*  Mobile (≤768px) */
+@media (max-width: 768px) {
+  .inquiry-page {
+    padding-top: 20%;
+  }
+
+  .inquiry-container {
+    padding: 25px;
+    max-width: 95%;
+  }
+
+  .form-title {
+    font-size: 22px;
+  }
+
+  .form-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .submit-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .radio-option {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .country-code-selector {
+    width: 90px; /* more compact */
+  }
+}
+
+/*  Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .inquiry-container {
+    padding: 18px;
+    border-radius: 8px;
+  }
+
+  .form-title {
+    font-size: 20px;
+  }
+
+  .form-subtitle {
+    font-size: 13px;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .radio-option {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/*  Tablet (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .inquiry-page {
+    padding-top: 12%;
+  }
+
+  .inquiry-container {
+    max-width: 550px; /* narrower form */
+    padding: 35px;
+  }
+
+  .form-title {
+    font-size: 26px;
+  }
+
+  .form-subtitle {
+    font-size: 15px;
+  }
+
+  .form-group label {
+    font-size: 15px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 15px;
+    padding: 11px 13px;
+  }
+
+  .submit-btn {
+    font-size: 17px;
+    padding: 13px;
+  }
+
+  .radio-option {
+    padding: 9px 18px;
+    font-size: 14px;
+  }
+
+  .country-code-selector {
+    width: 110px;
   }
 }

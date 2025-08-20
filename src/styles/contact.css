@@ -283,6 +283,104 @@ button:hover {
 }
 
 
+/*  Mobile (≤768px) */
+@media (max-width: 768px) {
+  .contact-hero {
+    height: auto;
+    padding: 110px 20px;
+    justify-content: center;
+    text-align: center;
+    border-bottom-right-radius: 40px;
+  }
+
+  .contact-heading {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+
+  .contact-subheading {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .info-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .contact-subtext h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-subtext p {
+    font-size: 0.95rem;
+  }
+
+  .contact-form-section {
+    padding: 40px 15px;
+  }
+
+  .form-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  input, select, textarea {
+    font-size: 0.95rem;
+    padding: 12px 15px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .btn-wrapper {
+    justify-content: center;
+  }
+}
+
+/*  Tablets (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-hero {
+    height: 50vh;
+    padding-left: 5%;
+    border-bottom-right-radius: 70px;
+  }
+
+  .contact-heading {
+    font-size: 3rem;
+    margin-top: 15%;
+  }
+
+  .contact-subheading {
+    font-size: 1.1rem;
+  }
+
+  .info-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .card {
+    flex: 0 0 45%; /* 2 cards per row */
+  }
+
+  .contact-form-section {
+    padding: 50px 30px;
+  }
+}
+
+
 
 
 

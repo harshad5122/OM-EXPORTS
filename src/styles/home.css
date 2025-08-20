@@ -945,4 +945,8 @@ body {
     font-size: 1.1rem;
     max-width: 100%;
   }
-}
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+ }

@@ -66,3 +66,105 @@ body {
   max-width: 700px;
   margin: auto;
 }
+
+/*  Mobile (max-width: 576px) */
+/* @media (max-width: 576px) {
+  .products-hero {
+    height: auto;
+    padding: 40px 20px;
+    border-bottom-right-radius: 40px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .products-heading {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .products-subheading {
+    font-size: 14px;
+    max-width: 100%;
+  }
+} */
+
+/*  Tablets (577px - 768px) */
+/* @media (max-width: 768px) {
+  .products-hero {
+    height: 50vh;
+    padding-left: 5%;
+    border-bottom-right-radius: 60px;
+  }
+
+  .products-heading {
+    font-size: 2.5rem;
+    margin-top: 10%;
+  }
+
+  .products-subheading {
+    font-size: 16px;
+    max-width: 90%;
+  }
+} */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .products-hero {
+    /* height: 60vh;
+    min-height: 400px;
+    justify-content: flex-start;
+    padding-left: 5%;
+    text-align: left;
+    border-bottom-right-radius: 80px; */
+     height: auto;
+    padding: 90px 20px;
+    justify-content: center;
+    text-align: center;
+    border-bottom-right-radius: 40px;
+  }
+  
+  .products-heading {
+    font-size: 2.5rem;
+  }
+  
+  .products-subheading {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .products-hero {
+    height: 70vh;
+    min-height: 500px;
+    padding-left: 10%;
+    border-bottom-right-radius: 100px;
+  }
+  
+  .products-heading {
+    font-size: 3rem;
+  }
+  
+  .products-subheading {
+    font-size: 1.2rem;
+  }
+}
+
+/*  Laptops (769px - 1024px) */
+/* @media (max-width: 1024px) {
+  .products-hero {
+    height: 60vh;
+    padding-left: 8%;
+    border-bottom-right-radius: 80px;
+  }
+
+  .products-heading {
+    font-size: 3rem;
+    margin-top: 8%;
+  }
+
+  .products-subheading {
+    font-size: 18px;
+    max-width: 85%;
+  }
+} */

@@ -262,7 +262,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .nav-container {
     padding: 0 15px;
   }
@@ -277,6 +277,36 @@
   
   .navbar.scrolled .nav-menu {
     top: 55px;
+  }
+} */
+
+@media screen and (max-width: 480px) {
+  .nav-container {
+    padding: 0 15px;
+  }
+  
+  .logo img {
+    height: 30px;
+  }
+  
+  .nav-menu {
+    top: 65px;
+    height: calc(100vh - 65px);
+    padding: 1.5rem 0;
+  }
+  
+  .navbar.scrolled .nav-menu {
+    top: 55px;
+    height: calc(100vh - 55px);
+  }
+  
+  .nav-link {
+    font-size: 1rem;
+  }
+  
+  .nav-cta-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
 

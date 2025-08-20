@@ -1,7 +1,8 @@
 import React, { useState } from 'react'; // Import useState
 import emailjs from '@emailjs/browser'; // Import emailjs
 import '../styles/contact.css';
-import backgroundImage from '../assets/images/shiping.jpg';
+// import backgroundImage from '../assets/images/shiping.jpg';
+import backgroundImage from '../assets/optimized/images/shiping.webp';
 import { useLanguage } from '../LanguageContext'; // Import useLanguage hook
 
 const Contact = () => {

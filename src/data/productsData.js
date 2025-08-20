@@ -1,49 +1,96 @@
 // src/data/productsData.js
-import spicesIcon from "../assets/images/icons/spices.png";
-import fruitsIcon from "../assets/images/icons/fruits.png";
-import vegetablesIcon from "../assets/images/icons/Vegetables.png";
-import pulsesIcon from "../assets/images/icons/pulses.png";
-import cottonIcon from "../assets/images/icons/cotton.jpg";
-import silkIcon from "../assets/images/icons/silk.jpg";
-import garmentsIcon from "../assets/images/icons/garments.jpg";
-import decorIcon from "../assets/images/icons/decor.jpg";
-import furnitureIcon from "../assets/images/icons/furniture.jpg";
-import machineryIcon from "../assets/images/icons/machinery.jpg";
-import toolsIcon from "../assets/images/icons/tools.jpg";
-import herbalIcon from "../assets/images/icons/herbal.jpg";
-import supplementsIcon from "../assets/images/icons/supplements.jpg";
+// import spicesIcon from "../assets/images/icons/spices.png";
+// import fruitsIcon from "../assets/images/icons/fruits.png";
+// import vegetablesIcon from "../assets/images/icons/Vegetables.png";
+// import pulsesIcon from "../assets/images/icons/pulses.png";
+// import cottonIcon from "../assets/images/icons/cotton.jpg";
+// import silkIcon from "../assets/images/icons/silk.jpg";
+// import garmentsIcon from "../assets/images/icons/garments.jpg";
+// import decorIcon from "../assets/images/icons/decor.jpg";
+// import furnitureIcon from "../assets/images/icons/furniture.jpg";
+// import machineryIcon from "../assets/images/icons/machinery.jpg";
+// import toolsIcon from "../assets/images/icons/tools.jpg";
+// import herbalIcon from "../assets/images/icons/herbal.jpg";
+// import supplementsIcon from "../assets/images/icons/supplements.jpg";
 
 
-import turmericImg from "../assets/images/products/turmeric.jpg";
-import cinnamonImg from "../assets/images/products/cinnamon.jpg";
-import cuminImg from "../assets/images/products/cumin.jpg";
-import corianderImg from "../assets/images/products/coriander.jpg";
-import redChilliImg from "../assets/images/products/red_chilli.jpg";
-import blackPepperImg from "../assets/images/products/black_pepper.jpg";
-import cardamomImg from "../assets/images/products/cardamom.jpg";
+// import turmericImg from "../assets/images/products/turmeric.jpg";
+// import cinnamonImg from "../assets/images/products/cinnamon.jpg";
+// import cuminImg from "../assets/images/products/cumin.jpg";
+// import corianderImg from "../assets/images/products/coriander.jpg";
+// import redChilliImg from "../assets/images/products/red_chilli.jpg";
+// import blackPepperImg from "../assets/images/products/black_pepper.jpg";
+// import cardamomImg from "../assets/images/products/cardamom.jpg";
 
-import basmatiRiceImg from "../assets/images/products/basmati_rice.jpg";
-import nonBasmatiRiceImg from "../assets/images/products/non_basmati_rice.jpg";
-import chickpeasImg from "../assets/images/products/chickpeas.jpg";
-import lentilsImg from "../assets/images/products/lentils.jpg";
+// import basmatiRiceImg from "../assets/images/products/basmati_rice.jpg";
+// import nonBasmatiRiceImg from "../assets/images/products/non_basmati_rice.jpg";
+// import chickpeasImg from "../assets/images/products/chickpeas.jpg";
+// import lentilsImg from "../assets/images/products/lentils.jpg";
 
-import mangoesImg from "../assets/images/products/mangoes.jpg";
-import bananasImg from "../assets/images/products/bananas.jpg";
-import grapesImg from "../assets/images/products/grapes.jpg";
-import pomegranatesImg from "../assets/images/products/pomegranates.jpg";
+// import mangoesImg from "../assets/images/products/mangoes.jpg";
+// import bananasImg from "../assets/images/products/bananas.jpg";
+// import grapesImg from "../assets/images/products/grapes.jpg";
+// import pomegranatesImg from "../assets/images/products/pomegranates.jpg";
 
-import onionsImg from "../assets/images/products/onions.jpg";
-import potatoesImg from "../assets/images/products/potatoes.jpg";
-import tomatoesImg from "../assets/images/products/tomatoes.jpg";
-import okraImg from "../assets/images/products/okra.jpg";
+// import onionsImg from "../assets/images/products/onions.jpg";
+// import potatoesImg from "../assets/images/products/potatoes.jpg";
+// import tomatoesImg from "../assets/images/products/tomatoes.jpg";
+// import okraImg from "../assets/images/products/okra.jpg";
 
-import tShirtImg from "../assets/images/products/t_shirt.jpg";
-import kurtiImg from "../assets/images/products/kurti.jpg";
-import sareeImg from "../assets/images/products/saree.jpg";
-import scarfImg from "../assets/images/products/scarf.jpg";
-import shawlImg from "../assets/images/products/shawl.jpg";
+// import tShirtImg from "../assets/images/products/t_shirt.jpg";
+// import kurtiImg from "../assets/images/products/kurti.jpg";
+// import sareeImg from "../assets/images/products/saree.jpg";
+// import scarfImg from "../assets/images/products/scarf.jpg";
+// import shawlImg from "../assets/images/products/shawl.jpg";
 
-import cotton_fabricImg from "../assets/images/products/cotton_fabric.jpg";
+// import cotton_fabricImg from "../assets/images/products/cotton_fabric.jpg";
+
+
+import spicesIcon from "../assets/optimized/images/icons/spices.webp";
+import fruitsIcon from "../assets/optimized/images/icons/fruits.webp";
+import vegetablesIcon from "../assets/optimized/images/icons/Vegetables.webp";
+import pulsesIcon from "../assets/optimized/images/icons/pulses.webp";
+import cottonIcon from "../assets/optimized/images/icons/cotton.webp";
+import silkIcon from "../assets/optimized/images/icons/silk.webp";
+import garmentsIcon from "../assets/optimized/images/icons/garments.webp";
+import decorIcon from "../assets/optimized/images/icons/decor.webp";
+import furnitureIcon from "../assets/optimized/images/icons/furniture.webp";
+import machineryIcon from "../assets/optimized/images/icons/machinery.webp";
+import toolsIcon from "../assets/optimized/images/icons/tools.webp";
+import herbalIcon from "../assets/optimized/images/icons/herbal.webp";
+import supplementsIcon from "../assets/optimized/images/icons/supplements.webp";
+
+
+import turmericImg from "../assets/optimized/images/products/turmeric.webp";
+import cinnamonImg from "../assets/optimized/images/products/cinnamon.webp";
+import cuminImg from "../assets/optimized/images/products/cumin.webp";
+import corianderImg from "../assets/optimized/images/products/coriander.webp";
+import redChilliImg from "../assets/optimized/images/products/red_chilli.webp";
+import blackPepperImg from "../assets/optimized/images/products/black_pepper.webp";
+import cardamomImg from "../assets/optimized/images/products/cardamom.webp";
+
+import basmatiRiceImg from "../assets/optimized/images/products/basmati_rice.webp";
+import nonBasmatiRiceImg from "../assets/optimized/images/products/non_basmati_rice.webp";
+import chickpeasImg from "../assets/optimized/images/products/chickpeas.webp";
+import lentilsImg from "../assets/optimized/images/products/lentils.webp";
+
+import mangoesImg from "../assets/optimized/images/products/mangoes.webp";
+import bananasImg from "../assets/optimized/images/products/bananas.webp";
+import grapesImg from "../assets/optimized/images/products/grapes.webp";
+import pomegranatesImg from "../assets/optimized/images/products/pomegranates.webp";
+
+import onionsImg from "../assets/optimized/images/products/onions.webp";
+import potatoesImg from "../assets/optimized/images/products/potatoes.webp";
+import tomatoesImg from "../assets/optimized/images/products/tomatoes.webp";
+import okraImg from "../assets/optimized/images/products/okra.webp";
+
+import tShirtImg from "../assets/optimized/images/products/t_shirt.webp";
+import kurtiImg from "../assets/optimized/images/products/kurti.webp";
+import sareeImg from "../assets/optimized/images/products/saree.webp";
+import scarfImg from "../assets/optimized/images/products/scarf.webp";
+import shawlImg from "../assets/optimized/images/products/shawl.webp";
+
+import cotton_fabricImg from "../assets/optimized/images/products/cotton_fabric.webp";
 
 export const categories = [
   { id: "all", nameKey: "products.data.category.all" },

@@ -1,7 +1,8 @@
 // src/pages/Services.js
 import React, { useEffect } from "react";
 import "../styles/services.css";
-import backgroundImage from "../assets/images/shiping.jpg";
+// import backgroundImage from "../assets/images/shiping.jpg";
+import backgroundImage from "../assets/optimized/images/shiping.webp";
 import {
   FaBoxes,
   FaCheckCircle,
