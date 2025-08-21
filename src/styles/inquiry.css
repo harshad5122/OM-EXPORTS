@@ -174,7 +174,8 @@ textarea {
 
 /* Submit Button */
 .submit-btn {
-  background: var(--gradient); /* Applied gradient background */
+  /* background: var(--gradient);  */
+  background: linear-gradient(135deg, #4ec7ef, #442f90);
   color: var(--white);
   padding: 14px;
   border: none;
@@ -190,7 +191,8 @@ textarea {
 }
 
 .submit-btn:hover {
-  background: linear-gradient(135deg, #4ec7ef , #442f90); /* Slightly darker gradient on hover */
+  /* background: linear-gradient(135deg, #4ec7ef , #442f90); */
+  background: #4ec7ef ;
   transform: translateY(-2px); /* Slight lift on hover */
 }
 

@@ -29,9 +29,17 @@ const CategorySlider = ({ categories, selectedCategory, onSelectCategory }) => {
             className={`category-btn ${
               selectedCategory === cat.id ? "active" : ""
             }`}
-            onClick={() => onSelectCategory(cat.id)}
+            // onClick={() => onSelectCategory(cat.id)}
+            onClick={(e) => {
+        onSelectCategory(cat.id);
+        // Auto scroll selected button into view
+        e.target.scrollIntoView({
+          behavior: "smooth",
+          inline: "center",
+          block: "nearest"
+        });
+      }}
           >
-            {/* Use t() to translate the category name based on nameKey */}
             {t(cat.nameKey)}
             {selectedCategory === cat.id && <span className="underline"></span>}
           </button>

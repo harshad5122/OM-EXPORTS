@@ -18,18 +18,19 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleMenu = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   const closeMenu = () => {
+    window.scrollTo(0, 0);
     setIsOpen(false);
   };
 
-  const handleLanguageChange = (event) => {
-    const selectedLang = event.target.value;
-    changeLanguage(selectedLang); // Use context's changeLanguage instead
-  };
+  // const handleLanguageChange = (event) => {
+  //   const selectedLang = event.target.value;
+  //   changeLanguage(selectedLang); // Use context's changeLanguage instead
+  // };
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -71,20 +72,32 @@ const Navbar = () => {
           </li>
 
           {/* Language Selector */}
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <select value={language} onChange={handleLanguageChange} className="language-select-btn">
               <option value="en">English</option>
               <option value="hi">हिंदी</option>
               <option value="gu">ગુજરાતી</option>
             </select>
-          </li>
-        </ul>
+          </li> */}
+          {/* Language Selector */}
+<li className="nav-item language-dropdown">
+  <button className="nav-cta-btn language-btn">
+    {language === "en" ? "English" : language === "hi" ? "हिंदी" : "ગુજરાતી"}
+  </button>
+  <ul className="language-menu">
+    <li onClick={() => changeLanguage("en")}>English</li>
+    <li onClick={() => changeLanguage("hi")}>हिंदी</li>
+    <li onClick={() => changeLanguage("gu")}>ગુજરાતી</li>
+  </ul>
+</li>
 
+        </ul>
+{/* 
         <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

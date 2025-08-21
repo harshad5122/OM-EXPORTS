@@ -19,6 +19,9 @@
 }
 
 .product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: linear-gradient(145deg, #ffffff, #f1f1f8);
   border-radius: 20px;
   overflow: hidden;
@@ -53,8 +56,15 @@
 }
 
 .product-content {
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
+  flex-grow: 1;
+}
+
+.product-footer {
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .product-title {
@@ -84,7 +94,8 @@
 }
 
 .enquire-button:hover {
-  background: linear-gradient(135deg, #442f90, #4ec7ef);
+  /* background: linear-gradient(135deg, #442f90, #4ec7ef); */
+  background: #4ec7ef;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
