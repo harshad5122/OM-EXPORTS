@@ -96,7 +96,7 @@
 .enquire-button:hover {
   /* background: linear-gradient(135deg, #442f90, #4ec7ef); */
   background: #4ec7ef;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 15px rgba(167, 243, 246, 0.4);
 }
 
 @keyframes fadeSlideUp {

@@ -6,16 +6,18 @@ import backgroundImage from "../assets/optimized/images/shiping.webp";
 import CategorySlider from "../components/CategorySlider";
 import SubCategoryGrid from "../components/SubCategoryGrid";
 import ProductCard from "../components/ProductCard";
+import HeroSection from '../components/HeroSection';
+
 
 
 import { categories, subCategories, products } from "../data/productsData";
 
 // Import useLanguage hook
-import { useLanguage } from '../LanguageContext'; // Assuming LanguageContext.js is in the parent directory of 'pages'
+// import { useLanguage } from '../LanguageContext'; 
 
 const Products = () => {
   // Get the translation function from the LanguageContext
-  const { t } = useLanguage();
+  // const { t } = useLanguage();
 
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
@@ -35,20 +37,22 @@ const Products = () => {
   return (
     <div className="products-container">
       {/* Hero Section */}
-      <section
+      {/* <section
         className="products-hero"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
         }}
       >
         <div className="overlay">
-          {/* Translated static text */}
+         
           <h1 className="products-heading">{t('products.heroHeading')}</h1>
           <p className="products-subheading">
             {t('products.heroSubheading')}
           </p>
         </div>
-      </section>
+      </section> */}
+
+      <HeroSection backgroundImage={backgroundImage} pageName="products" />
 
    
       <CategorySlider

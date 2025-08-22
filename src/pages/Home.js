@@ -1,16 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import '../styles/home.css';
 import { useLanguage } from '../LanguageContext'; 
 import { Link } from 'react-router-dom';
-
-// import heroImage from '../assets/images/slide1.jpg';
-// import serviceImage1 from '../assets/images/product-sourcing.jpg';
-// import serviceImage2 from '../assets/images/quality-control.jpg';
-// import serviceImage3 from '../assets/images/slide3.jpg';
-// import bgImage2 from '../assets/images/business.jpg';
-// import bgImage1 from '../assets/images/shipping.jpg';
-// import worldMap from '../assets/images/map3.jpg';
+import Inquire from "../components/Inquire";
 
 import heroImage from '../assets/optimized/images/slide1.webp';
 import serviceImage1 from '../assets/optimized/images/product-sourcing.webp';
@@ -20,13 +13,13 @@ import bgImage2 from '../assets/optimized/images/business.webp';
 import bgImage1 from '../assets/optimized/images/shipping.webp';
 import worldMap from '../assets/optimized/images/map3.webp';
 
-
 import packageIcon from '../assets/optimized/icons/package.webp';
 import logisticsIcon from '../assets/optimized/icons/logistics.webp';
 import qualityIcon from '../assets/optimized/icons/quality.webp';
 
 const Home = () => {
-  const { t } = useLanguage(); // Get translation function
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const { t } = useLanguage(); 
   const serviceRefs = useRef([]);
   serviceRefs.current = [];
 
@@ -54,6 +47,7 @@ const Home = () => {
   }, []);
 
   return (
+    <>
     <div className="home">
       <Navbar />
       
@@ -82,8 +76,7 @@ const Home = () => {
           <p className="about-subtext">
             {t('home.aboutDescription')}
           </p>
-          {/* <button className="about-btn">{t('home.aboutButton')} ➞</button> */}
-          <Link to="/about" className="about-btn">{t('home.aboutButton')} ➞</Link>
+          <Link to="/about" onClick={() => window.scrollTo(0, 0)} className="about-btn">{t('home.aboutButton')} ➞</Link>
 
           <div className="about-services">
             <div className="about-card">
@@ -174,60 +167,60 @@ const Home = () => {
       <section className="services-section">
         <div className="container">
           <div className="section-header">
-            <span className="section-badge">{t('home.servicesBadge')}</span>
+            {/* <span className="section-badge">{t('home.servicesBadge')}</span> */}
             <h2>{t('home.servicesTitle')}</h2>
             <p>{t('home.servicesSubtitle')}</p>
           </div>
 
-          <div className="services-grid">
-            <div ref={addToRefs} className="service-card fade-in">
+          <div className="service-grid">
+            <div ref={addToRefs} className="services-card fade-in">
               <div className="service-image">
                 <img
                   src={serviceImage1}
                   alt={t('home.service1Alt')}
                   loading="lazy"
-                  width="400"
-                  height="250"
+                  // width="400"
+                  // height="250"
                 />
               </div>
               <div className="service-content">
                 <h3>{t('home.service1Title')}</h3>
                 <p>{t('home.service1Description')}</p>
-                <button className="service-btn">{t('home.serviceButton')} →</button>
+                <Link to="/services" onClick={() => window.scrollTo(0, 0)} className="service-link">{t('home.serviceButton')}</Link>
               </div>
             </div>
 
-            <div ref={addToRefs} className="service-card fade-in">
+            <div ref={addToRefs} className="services-card fade-in">
               <div className="service-image">
                 <img
                   src={serviceImage2}
                   alt={t('home.service2Alt')}
                   loading="lazy"
-                  width="400"
-                  height="250"
+                  // width="400"
+                  // height="250"
                 />
               </div>
               <div className="service-content">
                 <h3>{t('home.service2Title')}</h3>
                 <p>{t('home.service2Description')}</p>
-                <button className="service-btn">{t('home.serviceButton')} →</button>
+                <Link to="/services" onClick={() => window.scrollTo(0, 0)} className="service-link">{t('home.serviceButton')}</Link>
               </div>
             </div>
 
-            <div ref={addToRefs} className="service-card fade-in">
+            <div ref={addToRefs} className="services-card fade-in">
               <div className="service-image">
                 <img
                   src={serviceImage3}
                   alt={t('home.service3Alt')}
                   loading="lazy"
-                  width="400"
-                  height="250"
+                  // width="400"
+                  // height="250"
                 />
               </div>
               <div className="service-content">
                 <h3>{t('home.service3Title')}</h3>
                 <p>{t('home.service3Description')}</p>
-                <button className="service-btn">{t('home.serviceButton')} →</button>
+                <Link to="/services" onClick={() => window.scrollTo(0, 0)} className="service-link">{t('home.serviceButton')}</Link>
               </div>
             </div>
           </div>
@@ -241,16 +234,16 @@ const Home = () => {
             <h2>{t('home.ctaTitle')}</h2>
             <p>{t('home.ctaDescription')}</p>
             <div className="cta-buttons">
-              {/* <button className="btn-primary">{t('home.ctaButton1')}</button>
-              <button className="btn-secondary">{t('home.ctaButton2')}</button> */}
-              <Link to="/inquiry" className="btn-primary">{t('home.ctaButton1')}</Link>
-              {/* Contact Us Button */}
-              <Link to="/contact" className="btn-secondary">{t('home.ctaButton2')}</Link>
+              {/* <Link to="/inquiry" onClick={() => setIsPopupOpen(true)} className="btn-primary">{t('home.ctaButton1')}</Link> */}
+              <button className="btn-primary" onClick={() => setIsPopupOpen(true)}>{t('home.ctaButton1')}</button>
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)} className="btn-secondary">{t('home.ctaButton2')}</Link>
             </div>
           </div>
         </div>
       </section>
     </div>
+    <Inquire isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+    </>
   );
 };
 

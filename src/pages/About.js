@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 
 // Import the useLanguage hook
 import { useLanguage } from '../LanguageContext'; 
+import HeroSection from '../components/HeroSection';
 
 // import backgroundImage from '../assets/images/shiping.jpg';
 // import product1 from '../assets/images/product-sourcing.jpg';
@@ -49,7 +50,7 @@ const About = () => {
     <div className="about-page">
 
       {/* Hero section */}
-      <section
+      {/* <section
         className="about-hero"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
@@ -61,7 +62,8 @@ const About = () => {
             {t('about.heroSubheading')}
           </p>
         </div>
-      </section>
+      </section> */}
+      <HeroSection backgroundImage={backgroundImage} pageName="about" />
 
 
       {/* Premium Who We Are Section */}

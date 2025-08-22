@@ -130,7 +130,7 @@ body {
 }
 
 .card h3::after {
-  content: ' →';
+  /* content: ' →'; */
   opacity: 0;
   transform: translateX(-5px);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -200,8 +200,15 @@ input, select, textarea {
   border-radius: 8px;
   font-size: 1rem;
   transition: border 0.3s;
+  font-family: 'Poppins', sans-serif;
 }
-
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  font-family: 'Poppins', sans-serif; /* 👈 force placeholder font */
+  font-size: 1rem;
+  color: #888; /* optional: consistent placeholder color */
+}
 input:focus, select:focus, textarea:focus {
   border-color: var(--primary-color);
   outline: none;
@@ -221,7 +228,8 @@ textarea {
 }
 
 button {
-  background: var(--primary-color);
+  /* background: var(--primary-color); */
+    background: linear-gradient(135deg, #4ec7ef, #442f90);
   color: #fff;
   border: none;
   padding: 12px 28px;

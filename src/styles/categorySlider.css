@@ -95,6 +95,12 @@
   justify-content: center;
 }
 
+.scroll-btn.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .scroll-btn:hover {
   /* background: #442f90; */
   /* color: white; */

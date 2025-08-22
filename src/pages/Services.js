@@ -1,8 +1,10 @@
 // src/pages/Services.js
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/services.css";
 // import backgroundImage from "../assets/images/shiping.jpg";
 import backgroundImage from "../assets/optimized/images/shiping.webp";
+import HeroSection from '../components/HeroSection';
+import Inquire from "../components/Inquire";
 import {
   FaBoxes,
   FaCheckCircle,
@@ -13,10 +15,12 @@ import {
 } from "react-icons/fa";
 // Import the useLanguage hook
 import { useLanguage } from '../LanguageContext';
-import { Link } from 'react-router-dom';
+
 
 
 const Services = () => {
+
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const { t } = useLanguage();
 
@@ -77,9 +81,10 @@ const Services = () => {
   }, []);
 
   return (
+    <>
     <div className="services-container">
       {/* Hero Section */}
-      <section
+      {/* <section
         className="services-hero"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
@@ -91,7 +96,8 @@ const Services = () => {
             {t('services.heroSubheading')}
           </p>
         </div>
-      </section>
+      </section> */}
+      <HeroSection backgroundImage={backgroundImage} pageName="services" />
 
       {/* Our Services Grid */}
       <section className="our-services">
@@ -120,11 +126,14 @@ const Services = () => {
           {t('services.ctaText')}
         </p>
         {/* <button className="cta-button">{t('services.ctaButton')}</button> */}
-        <Link to="/inquiry" className="cta-button">
+        {/* <Link to="/inquiry" className="cta-button">
           {t('services.ctaButton')}
-        </Link>
+        </Link> */}
+        <button className="cta-button" onClick={() => setIsPopupOpen(true)}> {t('services.ctaButton')}</button>
       </section>
     </div>
+     <Inquire isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+    </>
   );
 };
 

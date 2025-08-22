@@ -1,9 +1,12 @@
 // src/components/ProductCard.js
-import React from "react";
+import React, { useState } from "react";
 import "../styles/productCard.css";
 import { useLanguage } from "../LanguageContext"; 
+import Inquire from "./Inquire";
 
 const ProductCard = ({ selectedCategory, selectedSubCategory, products }) => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  
   const { t } = useLanguage(); 
   let displayProducts = [];
 
@@ -16,6 +19,7 @@ const ProductCard = ({ selectedCategory, selectedSubCategory, products }) => {
   if (displayProducts.length === 0) return null;
 
   return (
+    <>
     <div className="product-card-container">
       <div className="product-card-grid">
         {displayProducts.map((product, index) => (
@@ -33,7 +37,7 @@ const ProductCard = ({ selectedCategory, selectedSubCategory, products }) => {
                  </div>
               {product.enquire && (
                 <div className="product-footer">
-                <button className="enquire-button">{t('products.enquireNow')}</button>
+                <button className="enquire-button" onClick={() => setIsPopupOpen(true)}>{t('products.enquireNow')}</button>
                 </div>
               )}
             
@@ -41,6 +45,8 @@ const ProductCard = ({ selectedCategory, selectedSubCategory, products }) => {
         ))}
       </div>
     </div>
+    <Inquire isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+    </>
   );
 };
 

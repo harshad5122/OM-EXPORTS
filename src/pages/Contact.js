@@ -4,6 +4,7 @@ import '../styles/contact.css';
 // import backgroundImage from '../assets/images/shiping.jpg';
 import backgroundImage from '../assets/optimized/images/shiping.webp';
 import { useLanguage } from '../LanguageContext'; // Import useLanguage hook
+import HeroSection from '../components/HeroSection';
 
 const Contact = () => {
   const { t } = useLanguage(); // Get the translation function
@@ -63,8 +64,8 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
-
-      <section
+ {/* Hero Section */}
+      {/* <section
         className="contact-hero"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
@@ -76,11 +77,12 @@ const Contact = () => {
             {t('contact.heroSubheading')}
           </p>
         </div>
-      </section>
+      </section> */}
+      <HeroSection backgroundImage={backgroundImage} pageName="contact" />
 
       {/* Subtitle Below Image */}
       <div className="contact-subtext">
-        <h2>{t('contact.subtextHeading')}</h2>
+        {/* <h2>{t('contact.subtextHeading')}</h2> */}
         <h2>{t('contact.subtextHeading2')}</h2>
         <p>
           {t('contact.subtextDescription')}
@@ -180,86 +182,3 @@ const Contact = () => {
 
 export default Contact;
 
-
-
-
-// import '../styles/contact.css';
-// import backgroundImage from '../assets/images/shiping.jpg';
-// import { useLanguage } from '../LanguageContext'; // Import useLanguage hook
-
-// const Contact = () => {
-//   const { t } = useLanguage(); // Get the translation function
-
-//   return (
-//     <div className="contact-container">
-
-//       <section
-//         className="contact-hero"
-//         style={{
-//           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
-//         }}
-//       >
-//         <div className="overlay">
-//           <h1 className="contact-heading">{t('contact.heroHeading')}</h1>
-//           <p className="contact-subheading">
-//             {t('contact.heroSubheading')}
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* Subtitle Below Image */}
-//       <div className="contact-subtext">
-//         <h2>{t('contact.subtextHeading')}</h2>
-//         <p>
-//           {t('contact.subtextDescription')}
-//         </p>
-//       </div>
-
-//       {/* Info Cards */}
-//       <div className="info-cards">
-//         <div className="card">
-//           <div className="icon location-icon"></div>
-//           <h3>{t('contact.officeTitle')}</h3>
-//           <p>{t('contact.officeAddress')}</p>
-//         </div>
-//         <div className="card">
-//           <div className="icon phone-icon"></div>
-//           <h3>{t('contact.phoneTitle')}</h3>
-//           <p>+91 98765 43210</p> {/* Phone number is likely static */}
-//         </div>
-//         <div className="card">
-//           <div className="icon email-icon"></div>
-//           <h3>{t('contact.emailTitle')}</h3>
-//           <p>contact@omexports.com</p> {/* Email is likely static */}
-//         </div>
-//       </div>
-
-//       {/* Contact Form */}
-//       <div className="contact-form-section">
-//         <form className="contact-form">
-//           <div className="form-group">
-//             <input type="text" placeholder={t('contact.form.yourNamePlaceholder')} required />
-//             <input type="email" placeholder={t('contact.form.emailPlaceholder')} required />
-//           </div>
-//           <div className="form-group">
-//             <select required>
-//               <option value="">{t('contact.form.selectCountryPlaceholder')}</option>
-//               <option value="in">{t('contact.form.countryIndia')}</option>
-//               <option value="us">{t('contact.form.countryUSA')}</option>
-//               <option value="uk">{t('contact.form.countryUK')}</option>
-//               {/* Add more countries and their translations as needed */}
-//             </select>
-//             <input type="tel" placeholder={t('contact.form.phoneNumberPlaceholder')} required />
-//           </div>
-//           <input type="text" placeholder={t('contact.form.subjectPlaceholder')} className="subject" required />
-//           <textarea placeholder={t('contact.form.messagePlaceholder')} rows="6" required></textarea>
-//           <div className="btn-wrapper">
-//             <button type="submit">{t('contact.form.sendMessageButton')}</button>
-//           </div>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Contact;

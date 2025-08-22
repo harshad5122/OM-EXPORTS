@@ -276,7 +276,7 @@ const translations = {
       heroHeading: "Contact Us",
       heroSubheading: "Connect with Om Exports — your trusted partner in global trade solutions.",
       subtextHeading: "Please don't Hesitate",
-      subtextHeading2: "To Contact Us",
+      subtextHeading2: "Contact Us",
       subtextDescription: "You can also reach out to us by phone or email — we’re always happy to assist you!",
       officeTitle: "Our Office",
       officeAddress: "628, Level 6, 150 Feet Ring Rd, BRTS, near West zone, Rajkot, Gujarat, India",
@@ -350,6 +350,30 @@ const translations = {
       submitButton: "Submit Inquiry",
       submitButtonSending: "Sending...",
     },
+    
+    inquire: {
+      title: "Enquire Now",
+      subtitle: "Fill the details below and our team will get back to you shortly",
+      firstName: "First Name",
+      lastName: "Last Name",
+      email: "Email Address",
+      company: "Company Name",
+      country: "Select Country",
+      phone: "Phone Number",
+      importQuestion: "Have you imported this product?",
+      yes: "Yes",
+      no: "No",
+      message: "Write your message here...",
+      submit: "Send Inquiry",
+      countries: {
+        india: "India (+91)",
+        usa: "USA (+1)",
+        uk: "UK (+44)",
+        australia: "Australia (+61)",
+        canada: "Canada (+1)"
+    }
+  },
+    
     footer: {
       logoAlt: "OM Exports Logo",
       description: "Your trusted partner for premium quality Indian products and reliable global export solutions.",
@@ -648,7 +672,7 @@ const translations = {
       heroHeading: "हमसे संपर्क करें",
       heroSubheading: "ओम एक्सपोर्ट्स से जुड़ें - वैश्विक व्यापार समाधान में आपके विश्वसनीय भागीदार।",
       subtextHeading: "कृपया संकोच न करें",
-      subtextHeading2: "हमसे संपर्क करने के लिए",
+      subtextHeading2: "हमसे संपर्क करें",
       subtextDescription: "आप हमें फोन या ईमेल के माध्यम से भी संपर्क कर सकते हैं - हम हमेशा आपकी सहायता करने के लिए प्रसन्न हैं!",
       officeTitle: "हमारा कार्यालय",
       officeAddress: "628, लेवल 6, 150 फीट रिंग रोड, BRTS, वेस्ट ज़ोन के पास, राजकोट, गुजरात, भारत",
@@ -721,6 +745,28 @@ const translations = {
       },
       submitButton: "पूछताछ सबमिट करें",
       submitButtonSending: "भेजा जा रहा है...",
+    },
+    inquire: {
+      title: "अभी पूछताछ करें",
+      subtitle: "नीचे विवरण भरें और हमारी टीम आपसे जल्द ही संपर्क करेगी",
+      firstName: "पहला नाम",
+      lastName: "उपनाम",
+      email: "ईमेल पता",
+      company: "कंपनी का नाम",
+      country: "देश चुनें",
+      phone: "फोन नंबर",
+      importQuestion: "क्या आपने यह उत्पाद आयात किया है?",
+      yes: "हाँ",
+      no: "नहीं",
+      message: "अपना संदेश यहाँ लिखें...",
+      submit: "पूछताछ भेजें",
+      countries: {
+        india: "भारत (+91)",
+        usa: "अमेरिका (+1)",
+        uk: "यूके (+44)",
+        australia: "ऑस्ट्रेलिया (+61)",
+        canada: "कनाडा (+1)"
+      }
     },
     footer: {
       logoAlt: "ओएम एक्सपोर्ट्स लोगो",
@@ -1020,7 +1066,7 @@ const translations = {
       heroHeading: "સંપર્ક કરો",
       heroSubheading: "ઓમ એક્સપોર્ટ્સ સાથે જોડાઓ - વૈશ્વિક વેપાર ઉકેલોમાં તમારા વિશ્વસનીય ભાગીદાર.",
       subtextHeading: "કૃપા કરીને અચકાશો નહીં",
-      subtextHeading2: "અમારો સંપર્ક કરવા",
+      subtextHeading2: "સંપર્ક કરો",
       subtextDescription: "તમે અમને ફોન અથવા ઇમેઇલ દ્વારા પણ સંપર્ક કરી શકો છો - અમે હંમેશા તમને મદદ કરવા ખુશ છીએ!",
       officeTitle: "અમારી ઓફિસ",
       officeAddress: "628, લેવલ 6, 150 ફીટ રીંગ રોડ, BRTS, વેસ્ટ ઝોન નજીક, રાજકોટ, ગુજરાત, ભારત",
@@ -1094,6 +1140,28 @@ const translations = {
       submitButton: "પૂછપરછ સબમિટ કરો",
       submitButtonSending: "મોકલી રહ્યું છે...",
     },
+    inquire: {
+      title: "હમણાં પૂછપરછ કરો",
+      subtitle: "નીચે વિગતો ભરો અને અમારી ટીમ તમારા સંપર્કમાં ઝડપથી આવશે",
+      firstName: "પ્રથમ નામ",
+      lastName: "છેલ્લું નામ",
+      email: "ઇમેઇલ સરનામું",
+      company: "કંપનીનું નામ",
+      country: "દેશ પસંદ કરો",
+      phone: "ફોન નંબર",
+      importQuestion: "શું તમે આ ઉત્પાદન આયાત કર્યું છે?",
+      yes: "હા",
+      no: "ના",
+      message: "તમારો સંદેશ અહીં લખો...",
+      submit: "પૂછપરછ મોકલો",
+      countries: {
+        india: "ભારત (+91)",
+        usa: "અમેરિકા (+1)",
+        uk: "યુકે (+44)",
+        australia: "ઑસ્ટ્રેલિયા (+61)",
+        canada: "કેનેડા (+1)"
+      }
+  },
     footer: {
       logoAlt: "ઓમ એક્સપોર્ટ્સ લોગો",
       description: "પ્રીમિયમ ગુણવત્તાવાળા ભારતીય ઉત્પાદનો અને વિશ્વસનીય વૈશ્વિક નિકાસ ઉકેલો માટે તમારો વિશ્વસનીય ભાગીદાર.",
