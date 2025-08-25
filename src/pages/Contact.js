@@ -130,6 +130,7 @@ const Contact = () => {
             />
           </div>
           <div className="form-group">
+            <div className="select-wrap">
             <select
               name="country" // Match name to EmailJS template variable
               value={formData.country}
@@ -142,6 +143,7 @@ const Contact = () => {
               <option value="UK">{t('contact.form.countryUK')}</option>
               {/* Add more countries and their translations as needed */}
             </select>
+            </div>
             <input
               type="tel"
               name="phone_number" // Match name to EmailJS template variable

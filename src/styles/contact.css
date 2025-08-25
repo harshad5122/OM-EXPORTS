@@ -193,6 +193,41 @@ body {
   flex-wrap: wrap;
 }
 
+
+.select-wrap {
+  position: relative;
+  flex: 1;                     /* keeps layout same as before */
+  min-width: 220px;            /* optional: prevent squish */
+}
+
+.select-wrap select {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 44px;         /* space between text and arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select-wrap select::-ms-expand { display: none; }
+
+.select-wrap::after {
+  content: "";
+  position: absolute;
+  right: 15px;                 
+  top: 45%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #666;
+  border-bottom: 2px solid #666;
+  pointer-events: none;        /* click goes to select */
+}
+
+.select-wrap:focus-within::after {
+  border-color: var(--primary-color);
+}
+
 input, select, textarea {
   flex: 1;
   padding: 14px 18px;

@@ -119,7 +119,7 @@ const Home = () => {
             <div className="impact-text">
               <h2>{t('home.impactTitle')}</h2>
               <p>{t('home.impactDescription')}</p>
-              <button className="impact-btn">{t('home.impactButton')} →</button>
+              <button className="impact-btn">{t('home.impactButton')} ➞</button>
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@ const Home = () => {
               </div>
             </div>
 
-            <button className="export-btn">{t('home.exportButton')} →</button>
+            <button className="export-btn">{t('home.exportButton')} ➞</button>
           </div>
 
           <div className="export-right">

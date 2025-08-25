@@ -135,6 +135,7 @@ const Inquire = ({ isOpen, onClose }) => {
 
           {/* Row 3: Country + Phone */}
           <div className="form-row">
+            <div className="select-wrap">
             <select
               name="country"
               value={formData.country}
@@ -148,6 +149,7 @@ const Inquire = ({ isOpen, onClose }) => {
               <option value="Australia">{t("inquire.countries.australia")}</option>
               <option value="Canada">{t("inquire.countries.canada")}</option>
             </select>
+            </div>
             <input
               type="tel"
               name="phone"
